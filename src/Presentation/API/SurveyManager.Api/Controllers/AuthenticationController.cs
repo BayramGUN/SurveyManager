@@ -5,6 +5,8 @@ using MediatR;
 using SurveyManager.Application.Authentication.Commands.Register;
 using SurveyManager.Application.Authentication.Queries.Login;
 using SurveyManager.Application.Authentication.Common;
+using MapsterMapper;
+using SurveyManager.Api.Common.Extensions;
 
 namespace SurveyManager.Api.Controllers;
 
@@ -12,24 +14,24 @@ namespace SurveyManager.Api.Controllers;
 public class AuthenticationController : ApiController
 {
     private readonly ISender _mediator;
+    private readonly IMapper _mapper;
 
-    public AuthenticationController(ISender mediator)
+    public AuthenticationController(ISender mediator, IMapper mapper)
     {
         _mediator = mediator;
+        _mapper = mapper;
     }
 
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest registerRequest)
     {
-        var command = new RegisterCommand(
-            registerRequest.Firstname,
-            registerRequest.Lastname,
-            registerRequest.Email,
-            registerRequest.Password);
+        var command = registerRequest.RegisterRequestToCommand(_mapper);
         var authResult = await _mediator.Send(command);
         
         return authResult.Match(
-            authResult => Created($"{authResult.User.Id}", MapAuthResult(authResult)),
+            authResult => Created(
+                $"{authResult.User.Id}",
+                authResult.AuthenticationResultToResponse(_mapper)),
             errors => Problem(errors)
         );
     }
@@ -39,7 +41,7 @@ public class AuthenticationController : ApiController
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest loginRequest)
     {
-        var query = new LoginQuery(loginRequest.Email, loginRequest.Password);
+        var query = loginRequest.LoginRequestToQuery(_mapper);
         var authResult = await _mediator.Send(query);
         if(authResult.IsError && authResult.FirstError == Errors.Authentication.CredentialsNotValid)
         {
@@ -48,18 +50,8 @@ public class AuthenticationController : ApiController
                 title: authResult.FirstError.Description);
         }
         return authResult.Match(
-            authResult => Ok(MapAuthResult(authResult)),
+            authResult => Ok(authResult.AuthenticationResultToResponse(_mapper)),
             errors => Problem(errors)
         );
-    }
-    private static AuthenticationResponse MapAuthResult(AuthenticationResult authResult)
-    {
-        return new AuthenticationResponse(
-                    Id: authResult.User.Id,
-                    Firstname: authResult.User.Firstname,
-                    Lastname: authResult.User.Lastname,
-                    Email: authResult.User.Email,
-                    Token: authResult.Token
-                );
-    }
+    } 
 }

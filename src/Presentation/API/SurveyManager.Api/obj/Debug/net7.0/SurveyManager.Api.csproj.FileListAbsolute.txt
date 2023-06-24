@@ -46,3 +46,6 @@ C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyM
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\MediatR.dll
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\MediatR.Contracts.dll
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Mapster.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Mapster.Core.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Mapster.DependencyInjection.dll
