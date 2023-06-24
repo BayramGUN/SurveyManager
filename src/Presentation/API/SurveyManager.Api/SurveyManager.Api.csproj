@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0d457756-8102-40ad-b14a-65746f054610</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SurveyManager.Contracts\SurveyManager.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Application\SurveyManager.Application\SurveyManager.Application.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\SurveyManager.Infrastructure\SurveyManager.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

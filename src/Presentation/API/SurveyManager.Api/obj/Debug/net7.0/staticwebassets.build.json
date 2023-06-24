@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0Kaz1ANcq/QptQztqcLiRCwjdTAyJYrWcLdaqmPBbz4=",
+  "Source": "SurveyManager.Api",
+  "BasePath": "_content/SurveyManager.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

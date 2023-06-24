@@ -1,0 +1,15 @@
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\bin\Debug\net7.0\SurveyManager.Application.deps.json
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\bin\Debug\net7.0\SurveyManager.Application.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\bin\Debug\net7.0\SurveyManager.Application.pdb
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.csproj.AssemblyReference.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.AssemblyInfoInputs.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.AssemblyInfo.cs
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.csproj.CoreCompileInputs.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\refint\SurveyManager.Application.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.pdb
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\ref\SurveyManager.Application.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\bin\Debug\net7.0\SurveyManager.Domain.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\bin\Debug\net7.0\SurveyManager.Domain.pdb
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Application\SurveyManager.Application\obj\Debug\net7.0\SurveyManager.Application.csproj.CopyComplete

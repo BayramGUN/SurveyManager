@@ -1,0 +1,12 @@
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\bin\Debug\net7.0\SurveyManager.Contracts.deps.json
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\bin\Debug\net7.0\SurveyManager.Contracts.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\bin\Debug\net7.0\SurveyManager.Contracts.pdb
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.csproj.AssemblyReference.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.AssemblyInfoInputs.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.AssemblyInfo.cs
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\refint\SurveyManager.Contracts.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\SurveyManager.Contracts.pdb
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Contracts\obj\Debug\net7.0\ref\SurveyManager.Contracts.dll
