@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "nXxdABXA3B4M/T8AXRXIsMbkEcMTqbRX/qDyS7GkEPIp3mzmyZrYLHG04+MUGpXR2iVpFbV011RFXJdLf7zAOw==",
+  "dgSpecHash": "9G6s5K1x7R5wSzxppxlNQR5Qxx0m5OV17DPE4LB7EmJkSSBEm9IE6Z676rM57zuSxZnIrE5DH6BPaRgMWSrmTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bayra\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mapster.dependencyinjection\\1.0.0\\mapster.dependencyinjection.1.0.0.nupkg.sha512",

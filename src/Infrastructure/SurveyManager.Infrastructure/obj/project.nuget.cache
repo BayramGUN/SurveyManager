@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "9BtBb8z9qhHTPh96NaXgQr4OLJxDjUmO/8PIaro4hZLLDqhW00CzPnPQU6gAvl6qoxQ7KgzLxXpxEPhK3USzgA==",
+  "dgSpecHash": "viUHNxTFsoT3/136vyP/s9IG1JKCsuNJOODqiY+ApBTp7Y4pqGgNrVgi4QYh90bUcljqZP9QKNO8mpo6snH9KQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bayra\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\bayra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
