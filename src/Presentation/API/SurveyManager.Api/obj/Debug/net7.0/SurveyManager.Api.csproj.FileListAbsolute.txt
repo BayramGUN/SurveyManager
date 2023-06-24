@@ -52,3 +52,6 @@ C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyM
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Presentation\API\SurveyManager.Api\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

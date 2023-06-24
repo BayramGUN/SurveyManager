@@ -7,10 +7,12 @@ using SurveyManager.Application.Authentication.Queries.Login;
 using SurveyManager.Application.Authentication.Common;
 using MapsterMapper;
 using SurveyManager.Api.Common.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SurveyManager.Api.Controllers;
 
 [Route("auth")]
+[AllowAnonymous]
 public class AuthenticationController : ApiController
 {
     private readonly ISender _mediator;

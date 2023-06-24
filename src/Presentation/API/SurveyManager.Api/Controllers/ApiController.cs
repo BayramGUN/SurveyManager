@@ -1,4 +1,5 @@
 using ErrorOr;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SurveyManager.Api.Common.Http;
@@ -6,6 +7,7 @@ using SurveyManager.Api.Common.Http;
 namespace SurveyManager.Api.Controllers;
 
 [ApiController]
+[Authorize]
 public class ApiController : ControllerBase
 {
     protected IActionResult Problem(List<Error> errors)
