@@ -14,4 +14,4 @@
 }
 ```
 
-> Note: Password must be laying around like hashed. ⚠️
+> Note: Password must not be laying around without hashed! ⚠️
