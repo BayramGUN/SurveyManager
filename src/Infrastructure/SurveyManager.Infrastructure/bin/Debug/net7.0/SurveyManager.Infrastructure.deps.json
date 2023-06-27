@@ -264,7 +264,8 @@
       },
       "SurveyManager.Domain/1.0.0": {
         "dependencies": {
-          "ErrorOr": "1.2.1"
+          "ErrorOr": "1.2.1",
+          "MediatR": "11.1.0"
         },
         "runtime": {
           "SurveyManager.Domain.dll": {}

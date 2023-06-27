@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 {
     // Configure the HTTP request pipeline.
-    
+    app.UseCors("_mySpecs");
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();

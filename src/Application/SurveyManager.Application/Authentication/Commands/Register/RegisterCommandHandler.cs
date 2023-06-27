@@ -3,7 +3,7 @@ using MediatR;
 using SurveyManager.Application.Common.Interfaces.Persistence;
 using SurveyManager.Application.Common.Services.Authentication;
 using SurveyManager.Application.Authentication.Extensions;
-using SurveyManager.Domain.Entities;
+using SurveyManager.Domain.UserAggregate;
 using SurveyManager.Domain.Common.Errors;
 using SurveyManager.Application.Authentication.Common;
 
@@ -31,13 +31,12 @@ public class RegisterCommandHandler :
         if(_userRepository.GetUserByEmail(command.Email) is not null)
             return Errors.User.DuplicateEmail;
         var hashedPassword = command.Password.GetPasswordHash();
-        var user = new User
-        {
-            Firstname = command.Firstname,
-            Lastname = command.Lastname,
-            Email = command.Email,
-            Password = hashedPassword
-        };
+        var user = User.Create(
+            command.Firstname,
+            command.Lastname,
+            command.Email,
+            hashedPassword
+        );
         _userRepository.AddUser(user);
         var token = _jwtTokenGenerator.GenerateToken(user);
         return new AuthenticationResult(

@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SurveyManager.Contracts.Authentication;
 using MediatR;
 using SurveyManager.Application.Authentication.Commands.Register;
-using SurveyManager.Application.Authentication.Queries.Login;
-using SurveyManager.Application.Authentication.Common;
 using MapsterMapper;
 using SurveyManager.Api.Common.Extensions;
 using Microsoft.AspNetCore.Authorization;
@@ -27,7 +25,7 @@ public class AuthenticationController : ApiController
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest registerRequest)
     {
-        var command = registerRequest.RegisterRequestToCommand(_mapper);
+        var command = registerRequest.RequestToCommand<RegisterCommand>(_mapper);
         var authResult = await _mediator.Send(command);
         
         return authResult.Match(

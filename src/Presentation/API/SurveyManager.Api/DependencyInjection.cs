@@ -7,12 +7,14 @@ namespace SurveyManager.Api;
 
 public static class DependencyInjection
 {
+    public const string MyAllowSpecificOrigins  = "_mySpecs";
+
     public static IServiceCollection AddPresentation(this IServiceCollection services)
     {
         services.AddControllers();
         services.AddSingleton<ProblemDetailsFactory, SurveyManagerProblemDetailsFactory>();
         services.AddMappings();
-        /* services.AddCors(options =>
+        services.AddCors(options =>
         {
         options.AddPolicy(MyAllowSpecificOrigins,
                               policy =>
@@ -21,7 +23,7 @@ public static class DependencyInjection
                                         .AllowAnyHeader()
                                         .AllowAnyMethod();
                               });
-        }); */
+        });
         return services;
     }
 }

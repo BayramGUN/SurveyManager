@@ -42,17 +42,11 @@ public class Answer
         },
         {
             "question": "a question example three",
-            "answers": [
-                "answer-1",
-                "answer-2"
-            ]
+            "mostPopularAnswer": "answer-1"
         },
         {
             "question": "a question example four",
-            "answers": [
-                "answer-1",
-                "answer-2"
-            ]
+            "rateOfAnswers": 3.8
         }
     ],
 }

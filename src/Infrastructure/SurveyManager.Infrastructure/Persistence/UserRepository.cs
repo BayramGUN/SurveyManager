@@ -1,5 +1,5 @@
 using SurveyManager.Application.Common.Interfaces.Persistence;
-using SurveyManager.Domain.Entities;
+using SurveyManager.Domain.UserAggregate;
 
 namespace SurveyManager.Infrastructure.Persistence;
 

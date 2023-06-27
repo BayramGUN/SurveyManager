@@ -536,7 +536,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "ErrorOr": "1.2.1"
+          "ErrorOr": "1.2.1",
+          "MediatR": "11.1.0"
         },
         "compile": {
           "bin/placeholder/SurveyManager.Domain.dll": {}

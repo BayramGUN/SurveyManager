@@ -1,4 +1,4 @@
-using SurveyManager.Domain.Entities;
+using SurveyManager.Domain.UserAggregate;
 
 namespace SurveyManager.Application.Common.Services.Authentication;
 

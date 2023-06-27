@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SurveyManager.Application.Common.Interfaces.Services;
 using SurveyManager.Application.Common.Services.Authentication;
-using SurveyManager.Domain.Entities;
+using SurveyManager.Domain.UserAggregate;
 
 namespace SurveyManager.Infrastructure.Authentication;
 
@@ -24,6 +24,8 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 
     public string GenerateToken(User user)
     {
+        
+
         var signingCredentials = new SigningCredentials(
             new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(_tokenSettings.Secret)
@@ -33,7 +35,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
  
         var claims = new[] 
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString() ?? null!),
             new Claim(JwtRegisteredClaimNames.GivenName, user.Firstname),
             new Claim(JwtRegisteredClaimNames.FamilyName, user.Lastname),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),

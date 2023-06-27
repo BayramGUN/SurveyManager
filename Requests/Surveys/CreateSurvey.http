@@ -1,0 +1,57 @@
+@host=https://localhost:7146
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTdXJ2ZXlNYW5hZ2VyLkRvbWFpbi5Vc2VyQWdncmVnYXRlLlZhbHVlT2JqZWN0cy5Vc2VySWQiLCJnaXZlbl9uYW1lIjoiSm9obiIsImZhbWlseV9uYW1lIjoiRG9lIiwiZW1haWwiOiJlbWFpbEBleGFtcGxlLmNvbSIsImp0aSI6ImMxODdjY2U4LTNmMGQtNGMyMC04Nzk3LTdlOGMxMzk3ZjBiMiIsImV4cCI6MTY4NzkwODUzNiwiaXNzIjoiU3VydmV5TWFuYWdlckFwcElzc3VlciIsImF1ZCI6IlN1cnZleU1hbmFnZXJBcHBBdWRpZW5jZSJ9.ph6oCo1F8pFRbHPOLRdb9wUuzBf6NPVScOiQpXoI2gQ
+@hostId=806fc19c-746b-4146-8f99-fef3a05a2db3
+POST {{host}}/hosts/{{hostId}}/surveys
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "John's Survey",
+    "description": "John has been created firs survey for the application. Please answer it once!",
+    "elements": [
+        {
+            "name": "question1",
+            "type": "text"
+        },
+        {
+            "name": "question2",
+            "type": "command"
+        },
+        {
+            "name": "question3",
+            "type": "rating",
+            "rateCount": 5,
+            "rateMax": 5
+        },
+        {
+            "name": "question4",
+            "type": "checkbox",
+            "choices": [
+                "choise-1",
+                "choise-2"
+            ]
+        },
+        {
+            "name": "question7",
+            "type": "checkbox",
+            "choices": [
+                "choise-1",
+                "choise-2",
+                "choise-3",
+                "choise-4"
+            ]
+        },
+        {
+            "name": "question5",
+            "type": "radiogroup",
+            "choices": [
+                "choise-3",
+                "choise-4"
+            ]
+        },
+        {
+            "name": "question6",
+            "type": "boolean"
+        }
+    ]
+}
