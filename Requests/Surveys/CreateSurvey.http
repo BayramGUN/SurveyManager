@@ -1,13 +1,14 @@
 @host=https://localhost:7146
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTdXJ2ZXlNYW5hZ2VyLkRvbWFpbi5Vc2VyQWdncmVnYXRlLlZhbHVlT2JqZWN0cy5Vc2VySWQiLCJnaXZlbl9uYW1lIjoiSm9obiIsImZhbWlseV9uYW1lIjoiRG9lIiwiZW1haWwiOiJlbWFpbEBleGFtcGxlLmNvbSIsImp0aSI6ImMxODdjY2U4LTNmMGQtNGMyMC04Nzk3LTdlOGMxMzk3ZjBiMiIsImV4cCI6MTY4NzkwODUzNiwiaXNzIjoiU3VydmV5TWFuYWdlckFwcElzc3VlciIsImF1ZCI6IlN1cnZleU1hbmFnZXJBcHBBdWRpZW5jZSJ9.ph6oCo1F8pFRbHPOLRdb9wUuzBf6NPVScOiQpXoI2gQ
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTdXJ2ZXlNYW5hZ2VyLkRvbWFpbi5Vc2VyQWdncmVnYXRlLlZhbHVlT2JqZWN0cy5Vc2VySWQiLCJnaXZlbl9uYW1lIjoiQmF5cmFtIiwiZmFtaWx5X25hbWUiOiJHw7xuIiwiZW1haWwiOiJiYXlyYW0uZ3VuQGV4YW1wbGUuY29tIiwianRpIjoiZWMyMDgwMmEtMmVmMy00MmI1LWIyMGEtOGI3MmM4OWFmNTAyIiwiZXhwIjoxNjg4Mjk4NzUxLCJpc3MiOiJTdXJ2ZXlNYW5hZ2VyQXBwSXNzdWVyIiwiYXVkIjoiU3VydmV5TWFuYWdlckFwcEF1ZGllbmNlIn0.6-pBtC3JNVSjtJtWu3AGG6c8GOskcJatJBk5QMuxCqo
 @hostId=806fc19c-746b-4146-8f99-fef3a05a2db3
 POST {{host}}/hosts/{{hostId}}/surveys
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "title": "John's Survey",
-    "description": "John has been created firs survey for the application. Please answer it once!",
+    "title": "John's Survey 2",
+    "description": "John has been created second survey for the application. Please answer it once!",
+    "expiryDate": "2023-08-17T23:59:59",
     "elements": [
         {
             "name": "question1",
@@ -22,6 +23,12 @@ Authorization: Bearer {{token}}
             "type": "rating",
             "rateCount": 5,
             "rateMax": 5
+        },
+        {
+            "name": "question5",
+            "type": "rating",
+            "rateCount": 10,
+            "rateMax": 10
         },
         {
             "name": "question4",
@@ -42,7 +49,7 @@ Authorization: Bearer {{token}}
             ]
         },
         {
-            "name": "question5",
+            "name": "question8",
             "type": "radiogroup",
             "choices": [
                 "choise-3",

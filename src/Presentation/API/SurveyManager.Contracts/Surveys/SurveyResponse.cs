@@ -5,12 +5,13 @@ public record SurveyResponse(
     string HostId,
     string Description,
     string Title,
+    bool IsActive,
     List<QuestionResponse> Questions
 );
 
 public record QuestionResponse(
+    string Id,
     string Name,
-    string Title,
     string Type,
     int? RateCount,
     int? RateMax,

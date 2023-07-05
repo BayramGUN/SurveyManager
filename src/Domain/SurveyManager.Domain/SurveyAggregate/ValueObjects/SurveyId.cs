@@ -6,7 +6,7 @@ public sealed class SurveyId : AggregateRootId<Guid>
 {
     public override Guid Value { get; protected set; }
 
-        private SurveyId(Guid value)
+    private SurveyId(Guid value)
     {
         Value = value;
     }

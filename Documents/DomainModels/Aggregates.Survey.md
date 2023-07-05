@@ -16,52 +16,55 @@ public class Survey
 ``` -->
 
 ```json
+
 {
-    "id": "00000000-0000-0000-0000-000000000000",
-    "title": "title",
-    "description": "description",
-    "creatorId": "00000000-0000-0000-0000-000000000000",
-    "questions": [
+    "title": "John's Survey",
+    "description": "John has been created firs survey for the application. Please answer it once!",
+    "elements": [
         {
             "name": "question1",
-            "title": "a question example",
-            "type": "text",
+            "type": "text"
         },
         {
             "name": "question2",
-            "title": "a question example two",
-            "type": "command",
+            "type": "command"
         },
         {
             "name": "question3",
-            "title": "a question example three",
             "type": "rating",
             "rateCount": 5,
-            "rateMax": 5,
+            "rateMax": 5
         },
         {
             "name": "question4",
-            "title": "a question example four",
-            "type": "tagbox",
-            "choises": [
+            "type": "checkbox",
+            "choices": [
                 "choise-1",
                 "choise-2"
             ]
-        }
+        },
+        {
+            "name": "question7",
+            "type": "checkbox",
+            "choices": [
+                "choise-1",
+                "choise-2",
+                "choise-3",
+                "choise-4"
+            ]
+        },
         {
             "name": "question5",
-            "title": "a question example five",
             "type": "radiogroup",
-            "choises": [
-                "choise-1",
-                "choise-2"
+            "choices": [
+                "choise-3",
+                "choise-4"
             ]
         },
         {
             "name": "question6",
-            "title": "a question example six",
-            "type": "boolean",
+            "type": "boolean"
         }
-    ],
+    ]
 }
 ```

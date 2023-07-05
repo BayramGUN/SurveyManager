@@ -8,8 +8,9 @@ namespace SurveyManager.Api.Common.Extensions;
 
 public static class SurveyManagerExtensions
 {
-    public static TCommand RequestToCommand<TCommand>(this object source, IMapper mapper) 
-        => mapper.Map<TCommand>(source);
+    public static TCommand RequestToCommand<TCommand>(this object source, IMapper mapper, Guid? id = null) =>
+        (id is not null) ? mapper.Map<TCommand>((source, id)) : mapper.Map<TCommand>(source);
+    
     public static LoginQuery LoginRequestToQuery(this LoginRequest source, IMapper mapper) 
         => mapper.Map<LoginQuery>(source);
     public static AuthenticationResponse AuthenticationResultToResponse(this AuthenticationResult source, IMapper mapper) 

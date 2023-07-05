@@ -58,3 +58,21 @@ public sealed class Host : AggregateRoot<HostId, Guid>
             DateTime.UtcNow);
     }
 }
+
+
+/* 
+
+using SurveyManager.Domain.UserAggregate;
+
+namespace SurveyManager.Domain.HostAggregate;
+
+public class Host
+{ 
+    public Guid Id { get; set; }
+    public string? Firstname { get; set;}
+    public string? Lastname { get; set;}
+    public string? Email { get; set;}
+    public string? ProfileImage { get; set;}
+    public Guid UserId { get; }
+    public User? User { get; }
+} */

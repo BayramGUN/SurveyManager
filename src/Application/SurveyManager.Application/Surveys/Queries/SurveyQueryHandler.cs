@@ -21,8 +21,8 @@ public class SurveyQueryHandler :
         SurveyQuery query,
         CancellationToken cancellationToken)
     {
-        await Task.CompletedTask;
-        var survey = _surveyRepository.GetSurvey(new Guid(query.Id));
+        var survey = await _surveyRepository.GetSurveyAsync(query.Id);
+        //await _surveyRepository.UpdateSurveyAsync();
         if(survey is null)
             return Errors.Survey.NotFound;
         return new SurveyResult

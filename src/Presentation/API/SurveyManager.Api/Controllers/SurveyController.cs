@@ -24,10 +24,9 @@ public class SurveyController : ApiController
     }
 
     [HttpGet("survey")]
-    [AllowAnonymous]
-    public async Task<IActionResult> GetSurvey([FromQuery]Guid id)
+    public async Task<IActionResult> GetSurveyByHost([FromQuery]Guid id)
     {
-        var query = new SurveyQuery(Id: id.ToString());
+        var query = new SurveyQuery(Id: id);
         var surveyResult = await _mediator.Send(query);
         if(surveyResult.IsError && surveyResult.FirstError == Errors.Survey.NotFound)
         {
@@ -53,7 +52,7 @@ public class SurveyController : ApiController
         var createSurveyResult = await _mediator.Send(command);
         
         return createSurveyResult.Match(
-            survey => Created($"Survey created the link is = http://127.0.0.1:5500/surveyPage.html?={survey.Id.Value}", _mapper.Map<SurveyResponse>(survey)),
+            survey => Created($"Survey created the link is = http://127.0.0.1:5500/surveyPage.html?={survey.Id}", _mapper.Map<SurveyResponse>(survey)),
             errors => Problem(errors)
         );
     } 

@@ -1,5 +1,4 @@
 using FluentValidation;
-using SurveyManager.Application.Authentication.Queries.Login;
 
 namespace SurveyManager.Application.Authentication.Queries.Login;
 

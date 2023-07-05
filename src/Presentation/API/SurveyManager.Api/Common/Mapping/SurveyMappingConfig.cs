@@ -29,6 +29,7 @@ public class SurveyMappingConfig : IRegister
             .Map(dest => dest.HostId, src => src.HostId.Value.ToString());
        
         config.NewConfig<Question, QuestionResponse>()
+            .Map(dest => dest.Id, src => src.Id.Value.ToString())
             .Map(dest => dest.Type, src => src.Type);
     }
 }

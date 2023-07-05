@@ -1,7 +1,7 @@
 using SurveyManager.Application.Common.Interfaces.Persistence;
 using SurveyManager.Domain.UserAggregate;
 
-namespace SurveyManager.Infrastructure.Persistence;
+namespace SurveyManager.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {

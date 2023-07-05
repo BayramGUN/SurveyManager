@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -9,6 +10,8 @@ using SurveyManager.Application.Common.Interfaces.Services;
 using SurveyManager.Application.Common.Services.Authentication;
 using SurveyManager.Infrastructure.Authentication;
 using SurveyManager.Infrastructure.Persistence;
+using SurveyManager.Infrastructure.Persistence.Interceptors;
+using SurveyManager.Infrastructure.Persistence.Repositories;
 using SurveyManager.Infrastructure.Services;
 
 namespace SurveyManager.Infrastructure;
@@ -20,15 +23,19 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddAuth(configuration)
-                .AddPersistence();
+                .AddPersistence(configuration);
         
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         return services;
     }
-    public static IServiceCollection AddPersistence(this IServiceCollection services)
+    public static IServiceCollection AddPersistence(this IServiceCollection services, ConfigurationManager configuration)
     {
+        services.AddDbContext<SurveyManagerDbContext>(options =>
+        options.UseSqlServer(configuration.GetConnectionString("SQLServer")));
+        services.AddScoped<PublishDomainEventsInterceptor>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ISurveyRepository, SurveyRepository>();
+        services.AddScoped<ISurveyAnswerRepository, SurveyAnswerRepository>();
         return services;
     }
 

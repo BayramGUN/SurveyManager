@@ -5,5 +5,5 @@ using SurveyManager.Application.Surveys.Common;
 namespace SurveyManager.Application.Surveys.Queries;
 
 public record SurveyQuery(
-    string Id
+    Guid Id
 ) : IRequest<ErrorOr<SurveyResult>>;

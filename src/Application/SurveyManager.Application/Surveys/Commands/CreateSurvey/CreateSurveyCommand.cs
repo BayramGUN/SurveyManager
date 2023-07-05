@@ -12,12 +12,12 @@ public record CreateSurveyCommand(
     Guid HostId,
     string Title,
     string Description,
+    bool IsActive,
     DateTime ExpiryDate,
     List<QuestionCommand> Questions) : IRequest<ErrorOr<Survey>>;
 
 public record QuestionCommand(
     string Name,
-    string Title,
     string Type,
     int? RateCount,
     int? RateMax,
