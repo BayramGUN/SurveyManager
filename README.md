@@ -1,12 +1,15 @@
 # SurveyManager App
 
-## Promotional & Explanation Video
-
-[![Video](https://cdn.loom.com/sessions/thumbnails/324a0ac35a9042dab20d18161fd3805c-with-play.gif)](https://www.loom.com/share/324a0ac35a9042dab20d18161fd3805c)
+>Run Command
 
 ```cmd
 dotnet watch run --project src/Presentation/API/SurveyManager.Api --launch-profile https
 ```
+
+## Promotional & Explanation Video
+
+> Usage video
+[![Video](https://cdn.loom.com/sessions/thumbnails/324a0ac35a9042dab20d18161fd3805c-with-play.gif)](https://www.loom.com/share/324a0ac35a9042dab20d18161fd3805c)
 
 ### Documents of the project
 
@@ -31,6 +34,7 @@ dotnet watch run --project src/Presentation/API/SurveyManager.Api --launch-profi
 - [Frameworks](#frameworks)
   - [Entity Framework Core](#entity-framework-core)
   - [MediatR](#mediatr)
+  - [FluentValidation](#fluentvalidation)
 - [Libraries](#libraries)
   - [ErrorOr](#erroror)
   - [JWT Token](#jwt-token)
@@ -87,6 +91,14 @@ In software engineering, the mediator pattern defines an object that encapsulate
 ![MediatR](./Documents/Images/pluginIcon.png)
 
 Source: [MediatR Source](https://github.com/jbogard/MediatR)
+
+### FluentValidation
+
+Fluent Validation is a validation library for .NET, used for building strongly typed validation rules for business objects.
+
+![MediatR](./Documents/Images/FluentVald.png)
+
+Source: [MediatR Source](https://docs.fluentvalidation.net/en/latest/aspnet.html)
 
 ## Libraries
 
