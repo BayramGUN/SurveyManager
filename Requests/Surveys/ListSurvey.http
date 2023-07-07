@@ -1,4 +1,0 @@
-@host=https://localhost:7146
-
-
-GET {{host}}/AnonymSurveys/survey?id=7ee14adb-e961-4e04-b2ed-082e91266e2b

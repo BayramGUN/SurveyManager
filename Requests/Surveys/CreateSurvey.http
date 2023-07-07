@@ -1,6 +1,6 @@
 @host=https://localhost:7146
 @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTdXJ2ZXlNYW5hZ2VyLkRvbWFpbi5Vc2VyQWdncmVnYXRlLlZhbHVlT2JqZWN0cy5Vc2VySWQiLCJnaXZlbl9uYW1lIjoiQmF5cmFtIiwiZmFtaWx5X25hbWUiOiJHw7xuIiwiZW1haWwiOiJiYXlyYW0uZ3VuQGV4YW1wbGUuY29tIiwianRpIjoiZWMyMDgwMmEtMmVmMy00MmI1LWIyMGEtOGI3MmM4OWFmNTAyIiwiZXhwIjoxNjg4Mjk4NzUxLCJpc3MiOiJTdXJ2ZXlNYW5hZ2VyQXBwSXNzdWVyIiwiYXVkIjoiU3VydmV5TWFuYWdlckFwcEF1ZGllbmNlIn0.6-pBtC3JNVSjtJtWu3AGG6c8GOskcJatJBk5QMuxCqo
-@hostId=806fc19c-746b-4146-8f99-fef3a05a2db3
+@hostId=00000000-0000-0000-0000-0000000000
 POST {{host}}/hosts/{{hostId}}/surveys
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -12,26 +12,31 @@ Authorization: Bearer {{token}}
     "elements": [
         {
             "name": "question1",
+            "title": "title",
             "type": "text"
         },
         {
             "name": "question2",
+            "title": "title",
             "type": "command"
         },
         {
             "name": "question3",
+            "title": "title",
             "type": "rating",
             "rateCount": 5,
             "rateMax": 5
         },
         {
             "name": "question5",
+            "title": "title",
             "type": "rating",
             "rateCount": 10,
             "rateMax": 10
         },
         {
             "name": "question4",
+            "title": "title",
             "type": "checkbox",
             "choices": [
                 "choise-1",
@@ -40,6 +45,7 @@ Authorization: Bearer {{token}}
         },
         {
             "name": "question7",
+            "title": "title",
             "type": "checkbox",
             "choices": [
                 "choise-1",
@@ -50,6 +56,7 @@ Authorization: Bearer {{token}}
         },
         {
             "name": "question8",
+            "title": "title",
             "type": "radiogroup",
             "choices": [
                 "choise-3",
@@ -58,6 +65,7 @@ Authorization: Bearer {{token}}
         },
         {
             "name": "question6",
+            "title": "title",
             "type": "boolean"
         }
     ]

@@ -91,20 +91,3 @@ public class Survey : AggregateRoot<SurveyId, Guid>
     private Survey() { }
     # pragma warning disable CS8618
 }
-/* using SurveyManager.Domain.HostAggregate;
-using SurveyManager.Domain.SurveyAggregate.Entities;
-
-
-namespace SurveyManager.Domain.SurveyAggregate;
-public class Survey
-{
-    public Guid Id { get; set; }
-    public string Title { get; set; } = null!;
-    public string? Description { get; set; } 
-    public List<Question> Questions { get; set; } = new List<Question>();
-    public List<Answer>? Answers { get; set; }
-    public DateTime ExpiryDate { get; set; }
-    public Host? Host { get; set; }
-    public Guid HostId { get; set; }
-    
-} */

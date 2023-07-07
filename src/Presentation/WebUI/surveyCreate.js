@@ -19,11 +19,6 @@ document.getElementById("logout").addEventListener("click", () => {
     localStorage.removeItem("jwt");
     window.location.href = `./Authentication/login.html`;   
 })
-console.log(hostId);
-document.getElementById("getBack").addEventListener("click", () => { 
-    window.location.href = `./index.html`;   
-})
-console.log(hostId);
 
 document.getElementById("ok").addEventListener("click", () => { 
     

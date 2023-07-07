@@ -1,0 +1,31 @@
+# Create SurveyAnswer
+
+```js
+POST {{host}}/anonymsurveys/answers
+```
+
+```json
+{
+    "surveyId": "00000000-0000-0000-0000-0000000000",
+    "hostId": "00000000-0000-0000-0000-0000000000",
+    "answers": [
+        {
+            "questionName": "name",
+            "type": "text",
+            "answer": ["Bu bir ankara havaısıdır"]
+        },
+        {
+            "questionName": "quetionname",
+            "type": "type",
+            "answer": ["choice1", "choice2"]
+        },
+        {
+            "questionName": "name",
+            "type": "radio",
+            "answer": ["5"]
+        },
+    ]
+}
+```
+
+[Go to HTTP File](../../Requests/Surveys/CreateSurveyAnswer.http)

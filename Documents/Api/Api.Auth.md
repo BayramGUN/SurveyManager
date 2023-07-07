@@ -30,6 +30,8 @@ example:
 }
 ```
 
+[Go HTTP file](../../Requests/Authentication/Register.http)
+
 #### Register Response
 
 ```js
@@ -64,6 +66,8 @@ example:
     "password": "password!"
 }
 ```
+
+[Go HTTP file](../../Requests/Authentication/Login.http)
 
 #### Login Response
 

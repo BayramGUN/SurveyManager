@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xw74PXl2FTmzmHyCZqV/ZwEDFB+7fx+EsL9sTVpxC1nrAgy61EHQU1ryxuDXYGPrWlTEJZ1S8/FSMyibOoqozg==",
+  "dgSpecHash": "q5+H6nm2zldbTgaUDItSR+8nQOXRY+jwo9uxsfKw9BvTbOL0bctlEDrrJECqXNtWv8RQutoCuzoRDHLGG/FRnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bayra\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\bayra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

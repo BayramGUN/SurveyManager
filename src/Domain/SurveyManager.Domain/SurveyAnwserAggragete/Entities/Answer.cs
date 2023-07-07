@@ -38,23 +38,3 @@ public class Answer : Entity<AnswerId>
     private Answer() { }
 # pragma warning disable CS8618
 }
-/* using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SurveyManager.Domain.SurveyAggregate.Entities;
-public class Answer 
-{
-    public Guid Id { get; set; }
-    [NotMapped]
-    public List<string>? Choices { get; set; }
-
-    [Column(TypeName = "varchar(max)")]
-    public string ChoicesData
-    {
-        get => (Choices is not null) ? string.Join(",", Choices) : null!;
-        set => Choices = value?.Split(new[] { ',' }).ToList();
-    }
-    public string? Text { get; private set; }
-    public string? QuestionName { get; private set; }
-    public int Rate { get; private set; }
-
-} */

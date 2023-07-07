@@ -53,26 +53,3 @@ public class Question : Entity<QuestionId>
     private Question() { }
 # pragma warning disable CS8618
 }
-
-/* using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SurveyManager.Domain.SurveyAggregate.Entities;
-
-public class Question
-{
-    public Guid Id { get; set; }
-    public string Name { get; set; } = null!;
-    public string Type { get; set; } = null!;
-    public int? RateMax { get; set; }
-    public int? RateCount { get; set; }
-
-    [NotMapped]
-    public List<string>? Choices { get; set; }
-
-    [Column(TypeName = "varchar(max)")]
-    public string ChoicesData
-    {
-        get => (Choices is not null) ? string.Join(",", Choices) : null!;
-        set => Choices = value?.Split(new[] { ',' }).ToList();
-    }
-} */

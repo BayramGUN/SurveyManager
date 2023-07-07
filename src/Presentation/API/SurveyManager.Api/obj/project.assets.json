@@ -4239,11 +4239,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
-              "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
+            "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
+              "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
             },
-            "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj"
+            "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj"
             },
             "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj": {
               "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj"

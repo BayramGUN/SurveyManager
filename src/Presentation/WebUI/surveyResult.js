@@ -2,7 +2,7 @@ var url = window.location.search;
 url = url.replace("?", ''); // remove the ?
 var hostId = localStorage.getItem("hostId");
 var jwt = localStorage.getItem("jwt");
-var reqUrl = `https://localhost:7146/hosts/f8d48f6d-47b0-4b32-a432-6ea6eba6f166/surveys/getAnswers?surveyId` + url;
+var reqUrl = `https://localhost:7146/hosts/${hostId}/surveys/getAnswers?surveyId` + url;
 console.log(reqUrl);
 
 fetch(reqUrl, {
@@ -16,8 +16,7 @@ fetch(reqUrl, {
 })
 .then((response) => response.json())
 .then((data) => {
-    console.log(data)
-    generateSurveyResult(data);
+        generateSurveyResult(data);
 })
 .catch((error) => {
     console.error('Error:', error);
@@ -25,9 +24,9 @@ fetch(reqUrl, {
 
 function generateSurveyResult(data) {
     var surveyResultDiv = document.getElementById("res");
-
-    for (var i = 0; i < data.length; i++) {
-        var survey = data[i];
+    
+    for (var i = 0; i < data.surveyAnswers.length; i++) {
+        var survey = data.surveyAnswers[i];
         var surveyDiv = document.createElement("div");
         surveyDiv.className = "survey-container";
 
@@ -66,5 +65,6 @@ function generateSurveyResult(data) {
         }
 
         surveyResultDiv.appendChild(surveyDiv);
+        console.log(surveyResultDiv)
     }
 }

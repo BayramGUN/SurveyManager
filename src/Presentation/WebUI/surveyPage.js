@@ -2,7 +2,8 @@ var url = window.location.search;
 url = url.replace("?", ''); // remove the ?
 url = url.replace("=", ''); // remove the =
 var reqUrl = 'https://localhost:7146/anonymsurveys/survey?id=' + url;
-//localStorage.setItem("hostId", data.hostId);
+localStorage.removeItem("surveyId");
+localStorage.setItem("id", url);
 
 
 getSurveyData(reqUrl);
@@ -150,6 +151,7 @@ document.getElementById("getBack").addEventListener("click", function(event) {
     event.preventDefault();
     if (token) {
         window.location.href = `./index.html`;
+        console.log(token)
     }
     else {
         Swal.fire({
@@ -189,6 +191,8 @@ function processSurvey() {
 	    	surveyData.answers.push(newQuestion);
 	    }
     });
+
+    console.log(surveyId);
     sendRequest(JSON.stringify(surveyData));
     
     

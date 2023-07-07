@@ -1,0 +1,4 @@
+@host=https://localhost:7146
+@surveyId=00000000-0000-0000-0000-0000000000
+
+GET {{host}}/anonymsurveys/survey?id={{surveyId}}

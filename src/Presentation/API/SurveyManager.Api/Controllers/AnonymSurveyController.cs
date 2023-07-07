@@ -59,21 +59,4 @@ public class AnonymSurveyController : ApiController
             errors => Problem(errors)
         );
     }
-
-    
-    /* [HttpPut("answer")]
-    public async Task<IActionResult> AnswerSurvey(
-        CreateSurveyRequest surveyRequest,
-        Guid hostId
-    )
-    {
-        var command = _mapper.Map<CreateSurveyCommand>((surveyRequest, hostId));
-
-        var createSurveyResult = await _mediator.Send(command);
-        
-        return createSurveyResult.Match(
-            survey => Created($"Survey created the link is = http://127.0.0.1:5500/surveyPage.html?={survey.Id.Value}", _mapper.Map<SurveyResponse>(survey)),
-            errors => Problem(errors)
-        );
-    }  */
 }

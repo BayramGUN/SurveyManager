@@ -17,13 +17,11 @@ public class SurveyController : ApiController
 {
     private readonly IMapper _mapper;
     private readonly ISender _mediator;
-    private readonly ISurveyAnswerRepository _repository;
 
-    public SurveyController(IMapper mapper, ISender mediator, ISurveyAnswerRepository repository)
+    public SurveyController(IMapper mapper, ISender mediator)
     {
         _mapper = mapper;
         _mediator = mediator;
-        _repository = repository;
     }
 
     [HttpGet]
@@ -64,9 +62,14 @@ public class SurveyController : ApiController
     [HttpGet("getAnswers")]
     public async Task<IActionResult> GetAllAnswers([FromQuery]Guid surveyId)
     {
-        var answers = await _repository.GetSurveyAnswersAsync(surveyId);
-    
-        return Ok(answers);
+        var query = new SurveyAnswerQuery(surveyId: surveyId);
+
+        var getSurveyAnswerResult = await _mediator.Send(query);
+        
+        return getSurveyAnswerResult.Match(
+            hostSurveysResult => Ok(hostSurveysResult),
+            errors => Problem(errors)
+        );
     }
 
 }
