@@ -82,7 +82,7 @@ Source: [EF Core Source](https://learn.microsoft.com/en-us/ef/core/)
 
 In software engineering, the mediator pattern defines an object that encapsulates how a set of objects interact. This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior. In object-oriented programming, programs often consist of many classes.
 
-![MediatR](https://plugins.jetbrains.com/files/18313/342138/icon/pluginIcon.png)
+![MediatR](./Documents/Images/pluginIcon.png)
 
 Source: [MediatR Source](https://github.com/jbogard/MediatR)
 
