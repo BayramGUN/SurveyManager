@@ -90,24 +90,28 @@ Source: [MediatR Source](https://github.com/jbogard/MediatR)
 
 ### ErrorOr
 
-Insert description of ErrorOr library here.
+This library is an error handling mechanism. It based on [OneOf](https://github.com/mcintyre321/OneOf).
 
-![ErrorOr](https://example.com/erroror.png)
+![ErrorOr](./Documents/Images/icon.png)
 
-Source: [Example Source](https://example.com/erroror-source)
+Source: [ErrorOr Source](https://github.com/amantinband/error-or)
 
 ### JWT Token
 
-Insert description of JWT Token library here.
+JSON Web Token is a proposed Internet standard for creating data with optional signature and/or optional encryption whose payload holds JSON that asserts some number of claims. The tokens are signed either using a private secret or a public/private key.
 
-![JWT Token](https://example.com/jwt-token.png)
+![JWT Token](./Documents/Images/jwt.png)
 
-Source: [Example Source](https://example.com/jwt-token-source)
+Source: [JWT Token Source](https://jwt.io/introduction)
 
 ### Mapster
 
-Insert description of Mapster library here.
+As the name suggests, Mapster is a library that maps one object type to a different object type. It is a convention-based mapper that is easy to configure and use. Writing code to map one object to another can be very repetitive and boring. Because of this, Mapster frees us from writing error-prone boilerplate code.
 
-![Mapster](https://example.com/mapster.png)
+In most cases, we shouldn’t try to reinvent the wheel but use the available options.
 
-Source: [Example Source](https://example.com/mapster-source)
+Let’s find out if Mapster is a good option.
+
+![Mapster](./Documents/Images/mapster.png)
+
+Source: [Mapster Source](https://code-maze.com/mapster-aspnetcore-introduction/)
