@@ -2,6 +2,8 @@
 
 ## Promotional & Explanation Video
 
+[![Video](https://cdn.loom.com/sessions/thumbnails/324a0ac35a9042dab20d18161fd3805c-with-play.gif)](https://www.loom.com/share/324a0ac35a9042dab20d18161fd3805c)
+
 ```cmd
 dotnet watch run --project src/Presentation/API/SurveyManager.Api --launch-profile https
 ```
