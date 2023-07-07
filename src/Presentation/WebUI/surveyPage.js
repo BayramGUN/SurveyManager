@@ -5,13 +5,13 @@ var reqUrl = 'https://localhost:7146/anonymsurveys/survey?id=' + url;
 localStorage.removeItem("surveyId");
 localStorage.setItem("id", url);
 
-
 getSurveyData(reqUrl);
 
 function getSurveyData(reqUrl) {
     fetch(reqUrl)
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         generateSurvey(data);
     })
     .catch(error => {
@@ -139,19 +139,16 @@ document.getElementById("btn").addEventListener("click", function(event) {
 });
 
 
-var hostId = localStorage.getItem("hostId");
 var token = localStorage.getItem("jwt");
 var surveyId = localStorage.getItem("id");
 var surveyData = {
 	surveyId: surveyId,
-	hostId: hostId,
 	answers: []
 };
 document.getElementById("getBack").addEventListener("click", function(event) {
     event.preventDefault();
     if (token) {
         window.location.href = `./index.html`;
-        console.log(token)
     }
     else {
         Swal.fire({
@@ -191,15 +188,10 @@ function processSurvey() {
 	    	surveyData.answers.push(newQuestion);
 	    }
     });
-
-    console.log(surveyId);
-    sendRequest(JSON.stringify(surveyData));
-    
-    
-    
+    sendRequest(JSON.stringify(surveyData)); 
 }
 
-function sendRequest(jsonString) {
+async function sendRequest(jsonString) {
     const req = new Request(`https://localhost:7146/anonymsurveys/answers`, {
         method: 'POST',
         mode: 'cors',
@@ -209,14 +201,14 @@ function sendRequest(jsonString) {
         },
         body: jsonString
     }) 
-    fetch(req)
-        .then(response => {
-            response.json().then(data => {
-				console.log(data);
-            })
-        });
-   
-}
+    await fetch(req)
+    .then(response => {
+        response.json().then(data => {
+            console.log(data);
+        })
+    });
     
-  
+
+}
+
 

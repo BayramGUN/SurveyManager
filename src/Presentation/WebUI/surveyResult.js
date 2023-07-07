@@ -3,7 +3,6 @@ url = url.replace("?", ''); // remove the ?
 var hostId = localStorage.getItem("hostId");
 var jwt = localStorage.getItem("jwt");
 var reqUrl = `https://localhost:7146/hosts/${hostId}/surveys/getAnswers?surveyId` + url;
-console.log(reqUrl);
 
 fetch(reqUrl, {
     method: 'GET',
@@ -16,7 +15,7 @@ fetch(reqUrl, {
 })
 .then((response) => response.json())
 .then((data) => {
-        generateSurveyResult(data);
+    generateSurveyResult(data);
 })
 .catch((error) => {
     console.error('Error:', error);
@@ -65,6 +64,5 @@ function generateSurveyResult(data) {
         }
 
         surveyResultDiv.appendChild(surveyDiv);
-        console.log(surveyResultDiv)
     }
 }

@@ -1,10 +1,9 @@
 var hostId = localStorage.getItem("hostId");
 var jwt = localStorage.getItem("jwt");
 var username = localStorage.getItem("firstname") + " " + localStorage.getItem("lastname");
-console.log(username);
 
 var surveysUrl = `https://localhost:7146/hosts/${hostId}/surveys`;
-
+var now = formatDate(new Date());
 function getSurveysData(surveyUrl) {
     fetch(surveyUrl, {
         method: 'GET',
@@ -17,7 +16,6 @@ function getSurveysData(surveyUrl) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         surveyPage(data);
     })
     .catch(error => {
@@ -29,8 +27,10 @@ getSurveysData(surveysUrl);
 function surveyPage(data) {
     document.getElementById('fname').innerText = username;
     data.hostSurveys.forEach(element => {
-        var isActiveOrElse = "#f42d2d";
-        if (element.isActive) isActiveOrElse = "#beff33";
+        if(formatDate(new Date(element.expiryDate)) < now) 
+            var isActiveOrElse = "#f42d2d";
+        else  isActiveOrElse = "#beff33";
+                  
         document.getElementById("surveys").innerHTML += 
         `<div class="col">
             <div class="card">
@@ -50,7 +50,6 @@ function surveyPage(data) {
 
 function getDetailsOfSurvey(button) {
     var surveyId = button.parentNode.id;
-    console.log("Survey ID: " + surveyId);
     localStorage.setItem("surveyId", surveyId)
     window.location.href = './surveyResult.html?=' + surveyId;
 }
@@ -65,3 +64,26 @@ function surveyCreator(){
     window.location.href = './surveyCreate.html';
 }
 
+
+
+function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+}
+  
+function formatDate(date) {
+    return (
+      [
+        date.getFullYear(),
+        padTo2Digits(date.getUTCMonth() + 1),
+        padTo2Digits(date.getUTCDate()),
+      ].join('-') +
+      ' ' +
+      [
+        padTo2Digits(date.getUTCHours() + 3),
+        padTo2Digits(date.getUTCMinutes()),
+        padTo2Digits(date.getUTCSeconds()),
+      ].join(':')
+    );
+  }
+  
+  
