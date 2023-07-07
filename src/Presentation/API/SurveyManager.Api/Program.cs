@@ -11,10 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
     
 }
 
+var _mySpecs = "_mySpecs";
 var app = builder.Build();
 {
     // Configure the HTTP request pipeline.
-    app.UseCors("_mySpecs");
+    app.UseCors(_mySpecs);
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();

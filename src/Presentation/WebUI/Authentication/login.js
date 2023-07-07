@@ -17,7 +17,7 @@ function login() {
   
   let isStrEmpty = true;
   if(!username || !password) {
-    swalFire(objects['messageEmptyString'])
+    swalFire(objects.messageEmptyString, 'warning');
     isStrEmpty = false;
   }
   const input = {
@@ -43,7 +43,7 @@ function login() {
       const user = data; 
       localStorage.setItem("firstname", user.firstname);
       localStorage.setItem("lastname", user.lastname);
-      localStorage.setItem("id", user.id);
+      localStorage.setItem("hostId", user.id);
       localStorage.setItem("jwt", user.token)
     });
     if (response['status'] == 200) {
@@ -53,11 +53,11 @@ function login() {
         confirmButtonText: 'OK'
       }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = './../surveyCreate.html';
+        window.location.href = '../index.html';
       }
       });
       } else {
-        swalFire(objects['messageNo'])
+        swalFire(objects.messageNo, 'error');
       }
     }).catch(err => {
         console.log(err)  
@@ -67,10 +67,10 @@ function login() {
 }
 
 
-function swalFire(message) {
+function swalFire(message, icon) {
     Swal.fire({
       text: message,
-      icon: 'error',
+      icon: icon,
       confirmButtonText: 'OK'
     });
 }

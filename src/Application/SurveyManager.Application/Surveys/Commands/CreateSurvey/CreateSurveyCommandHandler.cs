@@ -27,9 +27,10 @@ public class CreateSurveyCommandHandler : IRequestHandler<CreateSurveyCommand, E
             questions : request.Questions.ConvertAll(question => Question.Create(
                 name : question.Name,
                 type : question.Type,
+                title : question.Title,
                 rateCount : question.RateCount,
                 rateMax : question.RateMax,
-                choices : question.Choices?.ToList()
+                choices : question.Choices?.Select(choice => choice.Text).ToList()
             )),
             description : request.Description
             );

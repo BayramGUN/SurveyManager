@@ -6,3 +6,45 @@
     width: 150px;
   }
   
+body {
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 32px;
+  color: #2196F3;
+}
+p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.btn-home {
+  margin-top: 20px;
+}
+.survey-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.question-title {
+  font-weight: bold;
+}
+
+.answer {
+  margin-left: 20px;
+}
+
+.answer-label {
+  font-weight: bold;
+}
+
+.answer-value {
+  margin-left: 10px;
+}

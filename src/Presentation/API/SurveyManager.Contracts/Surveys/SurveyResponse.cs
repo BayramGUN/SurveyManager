@@ -13,6 +13,7 @@ public record QuestionResponse(
     string Id,
     string Name,
     string Type,
+    string Title,
     int? RateCount,
     int? RateMax,
     List<string>? Choices

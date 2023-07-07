@@ -27,7 +27,7 @@ public class LoginQueryHandler :
         CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        var user = _userRepository.GetUserByEmail(query.Email);
+        var user = await _userRepository.GetUserByEmail(query.Email);
         if(user is null || !query.Password.VerifyPassword(user.Password))
             return Errors.Authentication.CredentialsNotValid;
         var token = _jwtTokenGenerator.GenerateToken(user);

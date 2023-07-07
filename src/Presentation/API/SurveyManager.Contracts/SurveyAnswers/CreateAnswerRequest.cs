@@ -8,5 +8,6 @@ public record CreateAnswerRequest(
 
 public record AnswerRequest(
     string QuestionName,
+    string Type,
     List<string>? Answer
 );

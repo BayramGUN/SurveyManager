@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Survey JS - Survey Creator Example</title>
-        <meta name="viewport" content="width=device-width"/>
-        <link href="https://cdn.jsdelivr.net/npm/survey-creator@1.7.28/survey-creator.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="survey.css">
+  <head>
+    <title>Survey JS - Survey Creator Example</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="./images/working.png" href="./images/working.png">
+    <link href="https://cdn.jsdelivr.net/npm/survey-creator@1.7.28/survey-creator.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="survey.css">
   </head>
-    <body>
-        <div id="surveyContainer">
-            <div id="creatorElement">
-	        </div>
+  <body>
+    <div class="navbar">
+      
+      <a class="btn btn-primary" href="./index.html" role="button">Get Back</a>
+      <a name="logout" id="logout" class="btn btn-primary" href="#" role="button">Logout</a>
+      <div id="surveyContainer">
+        <h4 class="text-warning">Please question titles and choices are not default!</h4>
+        <h4 class="text-warning">Please set an expirydate</h4>
+        <b>
+          <p class="text-info" style="color: #1ab394">⚠️ Only six tools supported by app ⚠️</p>
+        <ul class="text-info" style="list-style: none; color: #1ab394">
+          <li>checkbox</li>
+          <li>radiogroup</li>
+          <li>comment</li>
+          <li>text</li>
+          <li>boolean</li>
+          <li>rating</li>
+        </ul></b>
+        <div id="creatorElement">
+            </div>
+        <div class="container mt-5">
+            <div>
+              <div class="mb-3">
+                <label for="expiryDate" class="form-label">Select a date for expiry of survey:</label>
+                <input type="datetime-local" class="form-control" id="expiryDate" name="expiryDate">
+              </div>
+            </div>
+            <button id="ok" type="button" class="btn btn-primary btn-lg btn-block">Create Survey</button>
         </div>
-        <button id="ok" type="button" class="btn btn-primary btn-lg btn-block">Create Survey</button>
-        
-		
-	
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+	      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/survey-knockout@1.7.28/survey.ko.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.10/ace.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.10/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>

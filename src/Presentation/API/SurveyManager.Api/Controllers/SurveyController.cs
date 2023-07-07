@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using SurveyManager.Application.Surveys.Commands.CreateSurvey;
 using SurveyManager.Application.Surveys.Queries;
 using SurveyManager.Contracts.Surveys;
+using SurveyManager.Application.Common.Interfaces.Persistence;
 
 namespace SurveyManager.Api.Controllers;
 
@@ -16,27 +17,30 @@ public class SurveyController : ApiController
 {
     private readonly IMapper _mapper;
     private readonly ISender _mediator;
+    private readonly ISurveyAnswerRepository _repository;
 
-    public SurveyController(IMapper mapper, ISender mediator)
+    public SurveyController(IMapper mapper, ISender mediator, ISurveyAnswerRepository repository)
     {
         _mapper = mapper;
         _mediator = mediator;
+        _repository = repository;
     }
 
-    [HttpGet("survey")]
-    public async Task<IActionResult> GetSurveyByHost([FromQuery]Guid id)
+    [HttpGet]
+    public async Task<IActionResult> GetSurveyByHost(Guid hostId)
     {
-        var query = new SurveyQuery(Id: id);
-        var surveyResult = await _mediator.Send(query);
-        if(surveyResult.IsError && surveyResult.FirstError == Errors.Survey.NotFound)
+        var query = new HostSurveysQuery(hostId: hostId);
+        var hostSurveysResult = await _mediator.Send(query);
+        if(hostSurveysResult.IsError && hostSurveysResult.FirstError == Errors.Survey.NotFound)
         {
             return Problem(
                 statusCode: StatusCodes.Status404NotFound,
-                title: surveyResult.FirstError.Description
+                title: hostSurveysResult.FirstError.Description
             );
         }
-        return surveyResult.Match(
-            surveyResult => Ok(_mapper.Map<SurveyResponse>(surveyResult)),
+        //var responses = _mapper.Map<List<SurveyResponse>>(hostSurveysResult);
+        return hostSurveysResult.Match(
+            hostSurveysResult => Ok(hostSurveysResult),
             errors => Problem(errors)
         );
     }
@@ -56,4 +60,13 @@ public class SurveyController : ApiController
             errors => Problem(errors)
         );
     } 
+
+    [HttpGet("getAnswers")]
+    public async Task<IActionResult> GetAllAnswers([FromQuery]Guid surveyId)
+    {
+        var answers = await _repository.GetSurveyAnswersAsync(surveyId);
+    
+        return Ok(answers);
+    }
+
 }

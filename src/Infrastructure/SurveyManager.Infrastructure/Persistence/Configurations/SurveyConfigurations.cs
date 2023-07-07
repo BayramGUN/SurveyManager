@@ -33,7 +33,10 @@ public class SurveyConfigurations : IEntityTypeConfiguration<Survey>
                 );
 
             qb.Property(question => question.Name)
-                .HasMaxLength(200);
+                .HasMaxLength(20);
+
+            qb.Property(question => question.Title)
+                .HasMaxLength(250);
 
             qb.Property(question => question.Type)
                 .HasMaxLength(20);

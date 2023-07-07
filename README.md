@@ -2,7 +2,7 @@
 
 Please click details of the project documents
 
-- [Api](Documents/Api.md)
-  - [Auth](Documents/Api.md#auth)
-    - [Login](Documents/Api.md#login)
-    - [Register](Documents/Api.md#register)
+- [Api](Documents/Api/Api.Auth.md)
+  - [Auth](Documents/Api/Api.Auth.md#auth)
+    - [Login](Documents/Api/Api.Auth.md#login)
+    - [Register](Documents/Api/Api.Auth.md#register)

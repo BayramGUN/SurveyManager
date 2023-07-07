@@ -11,5 +11,6 @@ public class CreateSurveyCommandValidator : AbstractValidator<CreateSurveyComman
             .MinimumLength(5);
         RuleFor(x => x.Questions).NotEmpty();
         RuleFor(x => x.Questions.Select(x => x.Type)).NotEmpty();
+        RuleFor(x => x.Questions.Select(x => x.Title)).NotEmpty();
     }
 }

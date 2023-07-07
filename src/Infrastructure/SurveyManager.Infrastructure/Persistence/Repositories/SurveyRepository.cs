@@ -33,24 +33,31 @@ public class SurveyRepository : ISurveyRepository
         var survey = surveys.FirstOrDefault(survey => survey.Id.Value == id);
         return survey ?? default!;
     }
-    /* public async Task UpdateSurveyAsync()
+
+    public async Task<List<Survey>> GetSurveysByHostIdAsync(Guid hostId)
     {
         var surveys = await _dbContext.Surveys.ToListAsync();
+        var surveysOfHost = surveys.Where(survey => survey.HostId.Value == hostId).ToList();
+        return surveysOfHost;
+    }
+    /* public async Task UpdateSurveyAsync()
+{
+   var surveys = await _dbContext.Surveys.ToListAsync();
 
-        var survey = surveys.FirstOrDefault(survey => survey.Id == new Guid("244c95db-865d-4330-87b0-16658db311a3"));
-        var udpatedValue = "Description Updated";
-        survey!.Update(
-            hostId: survey!.HostId,
-            title: udpatedValue,
-            expiryDate: survey!.ExpiryDate.AddDays(2),
-            questions: survey!.Questions.ToList(),
-            isActive: false,
-            description: udpatedValue
-        );
-        
-        _dbContext.Update(survey);
-        await _dbContext.SaveChangesAsync();
-    } */
+   var survey = surveys.FirstOrDefault(survey => survey.Id == new Guid("244c95db-865d-4330-87b0-16658db311a3"));
+   var udpatedValue = "Description Updated";
+   survey!.Update(
+       hostId: survey!.HostId,
+       title: udpatedValue,
+       expiryDate: survey!.ExpiryDate.AddDays(2),
+       questions: survey!.Questions.ToList(),
+       isActive: false,
+       description: udpatedValue
+   );
+
+   _dbContext.Update(survey);
+   await _dbContext.SaveChangesAsync();
+} */
     /* public async Task<IList<Survey>> GetExpiredSurveys(DateTime utcNow)
     {
         var surveysExpired = await _dbContext.Surveys.Where(survey => survey.ExpiryDate > utcNow).ToListAsync();

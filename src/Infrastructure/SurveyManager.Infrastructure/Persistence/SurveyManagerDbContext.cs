@@ -5,6 +5,7 @@ using SurveyManager.Domain.Common.Models;
 using SurveyManager.Domain.SurveyAggregate;
 using SurveyManager.Domain.SurveyAggregate.Entities;
 using SurveyManager.Domain.SurveyAnswerAggregate;
+using SurveyManager.Domain.UserAggregate;
 using SurveyManager.Infrastructure.Persistence.Interceptors;
 
 namespace SurveyManager.Infrastructure.Persistence;
@@ -22,6 +23,7 @@ public class SurveyManagerDbContext : DbContext
 
     public DbSet<Survey> Surveys { get; set;} = null!;
     public DbSet<SurveyAnswer> SurveyAnswers { get; set;} = null!;
+    public DbSet<User> Users { get; set;} = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

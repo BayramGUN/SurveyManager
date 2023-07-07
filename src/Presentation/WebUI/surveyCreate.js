@@ -1,6 +1,6 @@
 // Show Designer, Test Survey, JSON Editor and additionally Logic tabs
 var options = {
-    showLogicTab: true
+    showLogicTab: false,
 };
 //create the SurveyJS Creator and render it in div with id equals to "creatorElement"
 var creator = new SurveyCreator.SurveyCreator("creatorElement", options);
@@ -12,26 +12,36 @@ creator.showPropertyGrid = "right";
 creator.rightContainerActiveItem("toolbox");
 var firstname = localStorage.getItem("firstname");
 var lastname = localStorage.getItem("lastname");
-var hostId = localStorage.getItem("id");
-console.log(hostId)
+var hostId = localStorage.getItem("hostId");
 var jwt = localStorage.getItem("jwt");
-console.log(jwt);
+
+document.getElementById("logout").addEventListener("click", () => { 
+    localStorage.removeItem("jwt");
+    window.location.href = `./Authentication/login.html`;   
+})
+console.log(hostId);
+document.getElementById("getBack").addEventListener("click", () => { 
+    window.location.href = `./index.html`;   
+})
+console.log(hostId);
+
 document.getElementById("ok").addEventListener("click", () => { 
     
     var result = Object.assign({}, creator.JSON);
     var surveyRequestObject = {
         elements: [],
         title: "",
-        description: ""
+        description: "",
+        expiryDate: ""
     };
+    var expiryDate = document.getElementById("expiryDate").value;
     result.pages.forEach(element => {
         surveyRequestObject.elements = element.elements;
         surveyRequestObject.title = element.title;
         surveyRequestObject.description = element.description;
+        surveyRequestObject.expiryDate = expiryDate;
     });
-    
     surveyRequest = JSON.stringify(surveyRequestObject);
-    console.log(surveyRequest)
     const req = new Request(`https://localhost:7146/hosts/${hostId}/surveys`, {
       method: 'POST',
       mode: 'cors',
@@ -49,3 +59,4 @@ document.getElementById("ok").addEventListener("click", () => {
             })
         });
 });
+

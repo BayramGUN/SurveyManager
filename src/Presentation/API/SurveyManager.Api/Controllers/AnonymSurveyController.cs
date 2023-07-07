@@ -20,13 +20,11 @@ public class AnonymSurveyController : ApiController
 {
     private readonly IMapper _mapper;
     private readonly ISender _mediator;
-    private readonly ISurveyAnswerRepository _repository;
 
     public AnonymSurveyController(IMapper mapper, ISender mediator, ISurveyAnswerRepository repository)
     {
         _mapper = mapper;
         _mediator = mediator;
-        _repository = repository;
     }
 
     [HttpGet("survey")]
@@ -62,13 +60,7 @@ public class AnonymSurveyController : ApiController
         );
     }
 
-    [HttpGet("getanswers")]
-    public async Task<IActionResult> GetAllAnswers([FromQuery]Guid surveyId)
-    {
-        var answers = await _repository.GetSurveyAnswersAsync(surveyId);
-        return Ok(answers);
-    }
-
+    
     /* [HttpPut("answer")]
     public async Task<IActionResult> AnswerSurvey(
         CreateSurveyRequest surveyRequest,

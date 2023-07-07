@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 using SurveyManager.Application.Common.Interfaces.Persistence;
 using SurveyManager.Domain.UserAggregate;
 
@@ -6,13 +8,23 @@ namespace SurveyManager.Infrastructure.Persistence.Repositories;
 public class UserRepository : IUserRepository
 {
     private static readonly List<User> _users = new();
-    public void AddUser(User user)
+    private readonly SurveyManagerDbContext _context;
+
+    public UserRepository(SurveyManagerDbContext context)
     {
-        _users.Add(user);
+        _context = context;
     }
 
-    public User? GetUserByEmail(string email)
+    public async Task AddUser(User user)
     {
-        return _users.SingleOrDefault(user => user.Email == email);
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync();
+        //_users.Add(user);
+    }
+
+    public async Task<User?> GetUserByEmail(string email)
+    {
+        var user = await _context.Users.SingleOrDefaultAsync(user => user.Email == email);
+        return user;
     }
 }

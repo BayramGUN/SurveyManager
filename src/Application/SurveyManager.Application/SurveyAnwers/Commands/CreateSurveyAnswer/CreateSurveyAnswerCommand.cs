@@ -2,6 +2,7 @@ using ErrorOr;
 
 using MediatR;
 
+using SurveyManager.Application.Surveys.Commands.CreateSurvey;
 using SurveyManager.Domain.SurveyAnswerAggregate;
 using SurveyManager.Domain.SurveyAnswerAggregate.Entities;
 

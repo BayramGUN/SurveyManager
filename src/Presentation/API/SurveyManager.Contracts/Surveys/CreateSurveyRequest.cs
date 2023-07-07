@@ -10,7 +10,13 @@ public record CreateSurveyRequest(
 public record Question(
     string Name,
     string Type,
+    string Title,
     int? RateCount,
     int? RateMax,
-    List<string>? Choices
+    List<Choice>? Choices
+);
+
+public record Choice(
+    string Value,
+    string Text
 );

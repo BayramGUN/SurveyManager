@@ -16,7 +16,7 @@ function register() {
   const lastname = document.getElementById("lastname").value;
   let isStrEmpty = true;
   if(!username || !password || !lastname || !firstname) {
-    swalFire(objects.messageEmptyString);
+    swalFire(objects.messageEmptyString, 'warning');
     isStrEmpty = false;
   }
   const input = {
@@ -43,6 +43,7 @@ function register() {
       let user = data; 
       localStorage.setItem("firstname", user.firstname);
       localStorage.setItem("lastname", user.lastname);
+      localStorage.setItem("hostId", user.id);
       localStorage.setItem("jwt", user.token);
     });
     if (response['status'] == 201) {
@@ -52,12 +53,12 @@ function register() {
         confirmButtonText: 'OK'
       }).then((result) => {
       if (result.isConfirmed) {
-            window.location.href = './surveyCreate.html';
+            window.location.href = './../index.html';
           }
       });
       } else {
         console.log()
-        swalFire(objects.messageNo)
+        swalFire(objects.messageNo, 'error');
       }
     }).catch(err => {
         console.log(err)  
@@ -67,10 +68,10 @@ function register() {
 }
 
 
-function swalFire(message) {
+function swalFire(message, icon) {
     Swal.fire({
       text: message,
-      icon: 'error',
+      icon: icon,
       confirmButtonText: 'OK'
     });
 }

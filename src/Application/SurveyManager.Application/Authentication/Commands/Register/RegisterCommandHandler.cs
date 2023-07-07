@@ -27,8 +27,7 @@ public class RegisterCommandHandler :
         RegisterCommand command,
         CancellationToken cancellationToken)
     {
-        await Task.CompletedTask;
-        if(_userRepository.GetUserByEmail(command.Email) is not null)
+        if(await _userRepository.GetUserByEmail(command.Email) is not null)
             return Errors.User.DuplicateEmail;
         var hashedPassword = command.Password.GetPasswordHash();
         var user = User.Create(
@@ -37,7 +36,7 @@ public class RegisterCommandHandler :
             command.Email,
             hashedPassword
         );
-        _userRepository.AddUser(user);
+        await _userRepository.AddUser(user);
         var token = _jwtTokenGenerator.GenerateToken(user);
         return new AuthenticationResult(
             User: user,

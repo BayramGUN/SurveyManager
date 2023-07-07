@@ -19,7 +19,13 @@ public record CreateSurveyCommand(
 public record QuestionCommand(
     string Name,
     string Type,
+    string Title,
     int? RateCount,
     int? RateMax,
-    List<string>? Choices
+    List<Choice>? Choices
 ); // : IRequest<ErrorOr<Question>>;
+
+public record Choice(
+    string Value,
+    string Text
+);
