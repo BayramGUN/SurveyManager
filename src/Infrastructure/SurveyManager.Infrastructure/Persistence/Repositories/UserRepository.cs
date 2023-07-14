@@ -7,7 +7,6 @@ namespace SurveyManager.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {
-    private static readonly List<User> _users = new();
     private readonly SurveyManagerDbContext _context;
 
     public UserRepository(SurveyManagerDbContext context)
@@ -19,7 +18,6 @@ public class UserRepository : IUserRepository
     {
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
-        //_users.Add(user);
     }
 
     public async Task<User?> GetUserByEmail(string email)

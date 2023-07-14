@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SurveyManager.Infrastructure
-build_property.ProjectDir = C:\Users\bayra\desktop\DotnetProjects\SurveyManager\src\Infrastructure\SurveyManager.Infrastructure\
+build_property.ProjectDir = C:\Users\bayra\Desktop\DotnetProjects\SurveyManager\src\Infrastructure\SurveyManager.Infrastructure\

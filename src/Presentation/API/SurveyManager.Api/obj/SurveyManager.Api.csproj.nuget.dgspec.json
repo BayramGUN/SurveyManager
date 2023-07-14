@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj": {}
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj",
+        "projectUniqueName": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj",
         "projectName": "SurveyManager.Application",
-        "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj",
+        "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj",
         "packagesPath": "C:\\Users\\bayra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\obj\\",
+        "outputPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bayra\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj": {
-                "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj"
+              "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj": {
+                "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj": {
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj",
         "projectName": "SurveyManager.Domain",
-        "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj",
+        "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\SurveyManager.Domain.csproj",
         "packagesPath": "C:\\Users\\bayra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\obj\\",
+        "outputPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Domain\\SurveyManager.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bayra\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -150,14 +150,14 @@
         }
       }
     },
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
         "projectName": "SurveyManager.Infrastructure",
-        "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\bayra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bayra\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -172,8 +172,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
-                "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
+              "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
+                "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
               }
             }
           }
@@ -188,6 +188,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.3, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.8.3, )"
+            },
+            "Hangfire.Storage.SQLite": {
+              "target": "Package",
+              "version": "[0.3.4, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.8, )"
@@ -233,14 +245,14 @@
         }
       }
     },
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj": {
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj",
+        "projectUniqueName": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj",
         "projectName": "SurveyManager.Api",
-        "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj",
+        "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\SurveyManager.Api.csproj",
         "packagesPath": "C:\\Users\\bayra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\obj\\",
+        "outputPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bayra\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -256,14 +268,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
-                "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
+              "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj": {
+                "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Application\\SurveyManager.Application\\SurveyManager.Application.csproj"
               },
-              "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj"
+              "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Infrastructure\\SurveyManager.Infrastructure\\SurveyManager.Infrastructure.csproj"
               },
-              "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj": {
-                "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj"
+              "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj": {
+                "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj"
               }
             }
           }
@@ -278,6 +290,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Hangfire.SqlServer": {
+              "target": "Package",
+              "version": "[1.8.3, )"
+            },
             "Mapster": {
               "target": "Package",
               "version": "[7.3.0, )"
@@ -320,14 +336,14 @@
         }
       }
     },
-    "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj": {
+    "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
         "projectName": "SurveyManager.Contracts",
-        "projectPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
+        "projectPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
         "packagesPath": "C:\\Users\\bayra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bayra\\AppData\\Roaming\\NuGet\\NuGet.Config"

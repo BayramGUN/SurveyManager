@@ -20,9 +20,11 @@ function getSurveyData(reqUrl) {
 }
 
 function generateSurvey(data) {
+    if(data.expiryDate == false) return;
     createSurveyHeader(data);
     localStorage.setItem("hostId", data.hostId);
     localStorage.setItem("id", data.id);
+
 	data.questions.forEach(function(question) {
         switch(question.type)
 		{

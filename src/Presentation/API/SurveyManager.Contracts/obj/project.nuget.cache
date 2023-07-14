@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rrxDP7gPp2llPjEVxFhV5ZGbhsD+ay/+hCM5LJcsU8x3A672eDf7rzbVp/Th2WwXwMMgkR5lhKuEyQ/bmWoOjA==",
+  "dgSpecHash": "htYgnxF2FEE5kzxnLQI8DDrcXRoSLVICfIX560UkqrhHNc2pCTJoFc57YstzAEWc3r2wyLkj1ZQFt+RY96/jzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bayra\\desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\bayra\\Desktop\\DotnetProjects\\SurveyManager\\src\\Presentation\\API\\SurveyManager.Contracts\\SurveyManager.Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

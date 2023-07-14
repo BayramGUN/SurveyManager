@@ -65,27 +65,35 @@ public class Survey : AggregateRoot<SurveyId, Guid>
 
         return survey;
     }
-    public void Update(
+    public Survey Update(
+        SurveyId surveyId,
         HostId hostId,
         string title,
         DateTime expiryDate,
+        DateTime createdDateTime,
         List<Question> questions,
-        bool? isActive = null,
+        bool isActive,
         string? description = null)
     {
-        HostId = hostId;
-        Title = title;
-        Description = description;
-        IsActive = isActive;
-        ExpiryDate = expiryDate;
-        UpdatedDateTime = DateTime.UtcNow;
-        
-        if (questions != null)
+
+        if (questions is not null)
         {
             _questions.Clear();
             _questions.AddRange(questions);
         }
+        var survey = new Survey(
+            surveyId,
+            hostId,
+            title,
+            description ?? string.Empty,
+            isActive,
+            expiryDate,
+            createdDateTime,
+            DateTime.UtcNow,
+            questions ?? new());
 
+        survey.AddDomainEvent(new SurveyUpdated(survey));
+        return survey;
     }
     # pragma warning disable CS8618
     private Survey() { }

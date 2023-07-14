@@ -1,13 +1,14 @@
 using MapsterMapper;
 using MediatR;
 using SurveyManager.Domain.Common.Errors;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using SurveyManager.Application.Surveys.Commands.CreateSurvey;
 using SurveyManager.Application.Surveys.Queries;
 using SurveyManager.Contracts.Surveys;
-using SurveyManager.Application.Common.Interfaces.Persistence;
+using SurveyManager.Application.Surveys.Commands.UpdateSurvey;
+using Hangfire;
+using SurveyManager.Application.Common.Services;
 
 namespace SurveyManager.Api.Controllers;
 
@@ -52,9 +53,24 @@ public class SurveyController : ApiController
         var command = _mapper.Map<CreateSurveyCommand>((surveyRequest, hostId));
 
         var createSurveyResult = await _mediator.Send(command);
-        
+        var createdSurveyId = createSurveyResult.Value.Id.Value;
+        var jobId = BackgroundJob.Enqueue<IServiceManagement>((service) => service.SendEmail($"{createdSurveyId}"));
         return createSurveyResult.Match(
-            survey => Created($"Survey created the link is = http://127.0.0.1:5500/surveyPage.html?={survey.Id}", _mapper.Map<SurveyResponse>(survey)),
+            survey => Created("Created", _mapper.Map<SurveyResponse>(survey)),
+            errors => Problem(errors)
+        );
+    } 
+    [HttpGet("update")]
+    public async Task<IActionResult> UpdateSurvey()
+    {
+        var id = new Guid("D6D29BA3-B5E4-482D-B135-0AB0B7A270A7");
+        var upComm = new UpdateSurveyCommand(
+            id,
+            false
+        );
+        var updateSurveyResult = await _mediator.Send(upComm);
+        return updateSurveyResult.Match(
+            survey => Ok(_mapper.Map<SurveyResponse>(survey)),
             errors => Problem(errors)
         );
     } 

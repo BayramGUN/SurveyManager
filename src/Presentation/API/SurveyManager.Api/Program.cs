@@ -1,5 +1,8 @@
+using Hangfire;
+
 using SurveyManager.Api;
 using SurveyManager.Application;
+using SurveyManager.Application.Common.Services;
 using SurveyManager.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,12 +17,14 @@ var builder = WebApplication.CreateBuilder(args);
 var _mySpecs = "_mySpecs";
 var app = builder.Build();
 {
-    // Configure the HTTP request pipeline.
+    app.UseHangfireServer();
+    app.UseHangfireDashboard();
     app.UseCors(_mySpecs);
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
+    RecurringJob.AddOrUpdate<IServiceManagement>("powerfuljob", (service) => service.UpdateDatabase(), "*/1 * * * *");
     app.Run();
 
 }

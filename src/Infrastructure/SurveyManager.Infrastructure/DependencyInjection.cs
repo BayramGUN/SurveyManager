@@ -1,4 +1,8 @@
 using System.Text;
+
+using Hangfire;
+using Hangfire.Storage.SQLite;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +11,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SurveyManager.Application.Common.Interfaces.Persistence;
 using SurveyManager.Application.Common.Interfaces.Services;
+using SurveyManager.Application.Common.Services;
 using SurveyManager.Application.Common.Services.Authentication;
 using SurveyManager.Infrastructure.Authentication;
 using SurveyManager.Infrastructure.Persistence;
@@ -23,16 +28,23 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddAuth(configuration)
-                .AddPersistence(configuration);
+                .AddPersistence(configuration)
+                .AddHangfire(configuration);
+
         
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+        services.AddTransient<IServiceManagement, ServiceManagement>();
         return services;
     }
     public static IServiceCollection AddPersistence(this IServiceCollection services, ConfigurationManager configuration)
     {
+        var connectionStringForDBContext = configuration.GetConnectionString("SQLServer");
         services.AddDbContext<SurveyManagerDbContext>(options =>
-        options.UseSqlServer(configuration.GetConnectionString("SQLServer")));
+            options.UseSqlServer(connectionStringForDBContext)
+        );
+        
         services.AddScoped<PublishDomainEventsInterceptor>();
+        
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ISurveyRepository, SurveyRepository>();
         services.AddScoped<ISurveyAnswerRepository, SurveyAnswerRepository>();
@@ -65,4 +77,21 @@ public static class DependencyInjection
             
         return services;
     }
+    public static IServiceCollection AddHangfire(
+            this IServiceCollection services,
+            ConfigurationManager configuration)
+        {
+            var connectionStringForHangfire = configuration.GetConnectionString("SQLServerForHF");
+            
+            services.AddHangfire(config =>
+            {
+                // Use SQL Server storage for Hangfire
+                config.UseSQLiteStorage(connectionStringForHangfire);
+            });
+
+            // Add the Hangfire background job server
+            services.AddHangfireServer();
+
+            return services;
+        }
 }
