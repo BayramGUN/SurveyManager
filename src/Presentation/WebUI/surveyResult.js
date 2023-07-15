@@ -23,24 +23,23 @@ fetch(reqUrl, {
 
 function generateSurveyResult(data) {
     var surveyResultDiv = document.getElementById("res");
-    
     for (var i = 0; i < data.surveyAnswers.length; i++) {
         var survey = data.surveyAnswers[i];
         var surveyDiv = document.createElement("div");
         surveyDiv.className = "survey-container";
-
+        
         var answers = survey.answers;
         for (var j = 0; j < answers.length; j++) {
             var answer = answers[j];
-
+            
             var questionDiv = document.createElement("div");
             questionDiv.className = "question";
-
             var questionTitle = document.createElement("p");
             questionTitle.className = "question-title";
+            console.log(questionTitle.className)
             questionTitle.innerHTML = answer.questionName;
             questionDiv.appendChild(questionTitle);
-
+            
             var answerChoices = answer.choices;
             for (var k = 0; k < answerChoices.length; k++) {
                 var choice = answerChoices[k];

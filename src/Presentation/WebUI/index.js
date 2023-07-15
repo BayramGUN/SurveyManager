@@ -27,7 +27,7 @@ getSurveysData(surveysUrl);
 function surveyPage(data) {
     document.getElementById('fname').innerText = username;
     data.hostSurveys.forEach(element => {
-        if(formatDate(new Date(element.expiryDate)) < now) 
+        if(element.isActive == false) 
             var isActiveOrElse = "#f42d2d";
         else  isActiveOrElse = "#beff33";
                   

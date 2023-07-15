@@ -29,8 +29,8 @@ public class AuthenticationController : ApiController
     {
         var command = registerRequest.RequestToCommand<RegisterCommand>(_mapper);
         var authResult = await _mediator.Send(command);
-        var createdUser = authResult.Value.User;
-        var jobId = BackgroundJob.Enqueue<IServiceManagement>((service) => service.SendEmail($"{createdUser.Email}"));
+        //var createdUser = authResult.Value.User;
+        //var jobId = BackgroundJob.Enqueue<IServiceManagement>((service) => service.SendEmail($"{createdUser.Email}"));
         return authResult.Match(
             authResult => Created(
                 $"{authResult.User.Id}",

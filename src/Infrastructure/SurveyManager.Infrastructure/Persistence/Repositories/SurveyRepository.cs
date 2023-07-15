@@ -31,9 +31,9 @@ public class SurveyRepository : ISurveyRepository
 
     public async Task<List<Survey>> GetSurveysByHostIdAsync(Guid hostId)
     {
-        IQueryable<Survey> surveys = _dbContext.Surveys.Where(survey => survey.HostId.Value == hostId);
-        //var surveysOfHost = surveys;
-        return await surveys.ToListAsync();
+        var surveys = await _dbContext.Surveys.AsNoTrackingWithIdentityResolution().ToListAsync();
+        var hostSurveys = surveys.Where(survey => survey.HostId.Value == hostId).ToList();
+        return hostSurveys;
     }
     public async Task<List<Survey>> GetAllSurveysAsync()
     {

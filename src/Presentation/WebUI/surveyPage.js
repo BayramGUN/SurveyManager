@@ -20,7 +20,7 @@ function getSurveyData(reqUrl) {
 }
 
 function generateSurvey(data) {
-    if(data.expiryDate == false) return;
+    if(data.isActive == false) window.location.href = './unexpiry.html';
     createSurveyHeader(data);
     localStorage.setItem("hostId", data.hostId);
     localStorage.setItem("id", data.id);

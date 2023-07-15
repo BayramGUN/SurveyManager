@@ -17,14 +17,14 @@ var builder = WebApplication.CreateBuilder(args);
 var _mySpecs = "_mySpecs";
 var app = builder.Build();
 {
-    app.UseHangfireServer();
+    //app.UseHangfireServer();
     app.UseHangfireDashboard();
     app.UseCors(_mySpecs);
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
-    RecurringJob.AddOrUpdate<IServiceManagement>("powerfuljob", (service) => service.UpdateDatabase(), "*/1 * * * *");
+    RecurringJob.AddOrUpdate<IServiceManagement>("updateJob", (service) => service.UpdateDatabase(), "*/30 * * * *");
     app.Run();
 
 }
