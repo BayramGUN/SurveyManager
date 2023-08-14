@@ -11,16 +11,16 @@ function getSurveyData(reqUrl) {
     fetch(reqUrl)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        generateSurvey(data);
+        if(data.isActive == false) window.location.href = './unexpiry.html';
+        generateSurvey(data) 
     })
     .catch(error => {
         console.log('Error fetching survey questions:', error);
 	});
+    
 }
 
 function generateSurvey(data) {
-    if(data.isActive == false) window.location.href = './unexpiry.html';
     createSurveyHeader(data);
     localStorage.setItem("hostId", data.hostId);
     localStorage.setItem("id", data.id);
@@ -57,16 +57,16 @@ function createSurveyHeader(data) {
 
 function createBooleanElement(question) {
 	document.getElementById("surveyContainer").innerHTML += 
-        `<label class="block text-gray-700 font-medium mb-2"> ${question.title} </label>`;
+        `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
 	document.getElementById("surveyContainer").innerHTML += 
 		`<div class="mb-4">
 			<div class="flex flex-wrap -mx-2">
 				<div class="px-2 w-1/3">
 					<label for"${question.type}_Yes" class="block text-gray-700 font-medium mb-2">
-                        <input type="radio" id"${question.type}_Yes" name=${question.title} value="Yes" class="mr-2"> Yes
+                        <input type="radio" id="${question.type}_Yes" name="${question.title}" value="Yes" class="mr-2"> Yes
                     </label>
 					<label for"${question.type}_No" class="block text-gray-700 font-medium mb-2">
-                        <input type="radio" id"${question.type}_No" name=${question.title} value="No" class="mr-2"> No	
+                        <input type="radio" id="${question.type}_No" name="${question.title}" value="No" class="mr-2"> No	
                     </label>
 				</div>
 			</div>
@@ -190,6 +190,7 @@ function processSurvey() {
 	    	surveyData.answers.push(newQuestion);
 	    }
     });
+    console.log(JSON.stringify(surveyData));
     sendRequest(JSON.stringify(surveyData)); 
 }
 
