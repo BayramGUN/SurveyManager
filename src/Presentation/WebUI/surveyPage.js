@@ -4,59 +4,76 @@ url = url.replace("=", ''); // remove the =
 var reqUrl = 'https://localhost:7146/anonymsurveys/survey?id=' + url;
 localStorage.removeItem("surveyId");
 localStorage.setItem("id", url);
+const jwt = localStorage.getItem("jwt");
 
 getSurveyData(reqUrl);
-
-function getSurveyData(reqUrl) {
-    fetch(reqUrl)
-    .then(response => response.json())
-    .then(data => {
-        if(data.isActive == false) window.location.href = './unexpiry.html';
-        generateSurvey(data) 
-    })
-    .catch(error => {
-        console.log('Error fetching survey questions:', error);
-	});
+async function getSurveyData(reqUrl) {
+    try {
+        
+        const response = await fetch(reqUrl);
+        const data = await response.json();
+        
+        if(data.isActive == false)
+        window.location.href = './unexpiry.html';
     
+    generateSurvey(data) 
+    return data;
+} catch (error) {
+    Swal.fire ({
+        title: `${error.message}`,
+        icon: 'error',
+        confirmButtonText: 'OK'
+        });
+    }
 }
 
-function generateSurvey(data) {
+async function generateSurvey(data) {
     createSurveyHeader(data);
     localStorage.setItem("hostId", data.hostId);
     localStorage.setItem("id", data.id);
-
+    
 	data.questions.forEach(function(question) {
         switch(question.type)
 		{
-			case 'text':
-				createTextElement(question);
+            case 'text':
+                createTextElement(question);
 				break;
-			case 'radiogroup':
-				createRadioGroupElement(question);
-				break;
-			case 'comment':
-				createCommentElement(question);
-				break;
-			case 'rating':
-				createRatingElement(question);
-				break;
+            case 'radiogroup':
+                createRadioGroupElement(question);
+            break;
+            case 'comment':
+                createCommentElement(question);
+            break;
+            case 'rating':
+                createRatingElement(question);
+                break;
 			case 'checkbox':
 				createCheckboxElement(question);
 				break;
 			case 'boolean':
-				createBooleanElement(question)
+                createBooleanElement(question)
 				break;
-		}
+            default:
+                Swal.fire({
+                    title: 'Sorry! Unsupported question type!',
+                    text: `${question.type} is not supported on that survey!`,
+                    confirmButtonText: 'OK'
+                }).then(result => {
+                    if(result)
+                        window.location.href = './index.html'
+                });
+                break;
+        }
 	});
 }
 function createSurveyHeader(data) {
-	document.getElementById("title").innerHTML = data.title;
+    document.getElementById("title").innerHTML = data.title;
 	document.getElementById("desc").innerHTML = data.description;
 }
 
 
 function createBooleanElement(question) {
-	document.getElementById("surveyContainer").innerHTML += 
+    document.getElementById("surveyContainer").innerHTML += 
         `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
 	document.getElementById("surveyContainer").innerHTML += 
 		`<div class="mb-4">
@@ -136,12 +153,11 @@ function createRadioGroupElement(question) {
 
 
 document.getElementById("btn").addEventListener("click", function(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     processSurvey();
 });
 
 
-var token = localStorage.getItem("jwt");
 var surveyId = localStorage.getItem("id");
 var surveyData = {
 	surveyId: surveyId,
@@ -149,18 +165,18 @@ var surveyData = {
 };
 document.getElementById("getBack").addEventListener("click", function(event) {
     event.preventDefault();
-    if (token) {
+    if (jwt) {
         window.location.href = `./index.html`;
-    }
-    else {
-        Swal.fire({
-            text: "Please submit the survey",
-            icon: 'warning',
-            confirmButtonText: 'OK'
-        });
-    }
-});
-
+    } else {
+            Swal.fire({
+                title: 'Unexpected operation!',
+                text: "You are unauthorized to do that!",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
+        }
+    });
+    
 function processSurvey() {
     var answerElements = document
         .querySelectorAll(
@@ -191,7 +207,8 @@ function processSurvey() {
 	    }
     });
     console.log(JSON.stringify(surveyData));
-    sendRequest(JSON.stringify(surveyData)); 
+    sendRequest(JSON.stringify(surveyData));
+     
 }
 
 async function sendRequest(jsonString) {
@@ -204,14 +221,31 @@ async function sendRequest(jsonString) {
         },
         body: jsonString
     }) 
-    await fetch(req)
-    .then(response => {
-        response.json().then(data => {
-            console.log(data);
-        })
-    });
-    
+    const response = await fetch(req);
 
+    if(response.status != 201)
+        Swal.fire({
+            text: `there is a problem like ${response.status}`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    const data = await response.json();
+    submitation();
+    return data;
+
+}
+
+function submitation() {
+        Swal.fire({
+            text: `The survey has been answered!`,
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(result => {
+            if(result && !jwt)
+                window.location.href = './submitSurveyPage.html';
+            else
+                window.location.href = './index.html';
+        });
 }
 
 

@@ -17,6 +17,7 @@ function getSurveysData(surveyUrl) {
     .then(response => response.json())
     .then(data => {
         surveyPage(data);
+        console.log(data)
     })
     .catch(error => {
         console.log('Error fetching survey questions:', error);

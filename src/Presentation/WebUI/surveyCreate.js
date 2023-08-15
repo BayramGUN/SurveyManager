@@ -36,7 +36,29 @@ document.getElementById("ok").addEventListener("click", () => {
         surveyRequestObject.description = element.description;
         surveyRequestObject.expiryDate = expiryDate;
     });
+    surveyRequestObject.elements.forEach(element => {
+        console.log(element.type)
+        if(element.type !== 'checkbox' && 
+            element.type !== 'radiogroup' && 
+            element.type !== 'text' && 
+            element.type !== 'boolean' && 
+            element.type !== 'rating' && 
+            element.type !== 'comment')
+            Swal.fire({
+                title: 'Sorry! Unsupported question type!',
+                text: `${element.type} is not supported on that survey!`,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            }).then(result => {
+                if(result)
+                    window.location.reload()
+            });
+    })
     surveyRequest = JSON.stringify(surveyRequestObject);
+    createSurveyRequest(surveyRequest);
+});
+
+async function createSurveyRequest(surveyRequest) {
     const req = new Request(`https://localhost:7146/hosts/${hostId}/surveys`, {
       method: 'POST',
       mode: 'cors',
@@ -47,11 +69,20 @@ document.getElementById("ok").addEventListener("click", () => {
       },
       body: surveyRequest
     }) 
-    fetch(req)
-        .then(response => {
-            response.json().then(data => {
-                window.location.href = `./surveyPage.html?=` + data.id;
-            })
-        });
-});
 
+    const response = await fetch(req);
+    if(response.status == 201) {
+        response.json().then(data => {
+        Swal.fire({
+            title: 'Success!',
+            icon: 'success',
+            text: `${data.title} is created`,
+            confirmButtonText: 'OK'
+        }).then(result => {
+            if(result)
+                    window.location.href = `./surveyPage.html?=${data.id}`
+                });
+        });
+    }
+        
+}

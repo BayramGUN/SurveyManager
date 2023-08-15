@@ -15,6 +15,7 @@ fetch(reqUrl, {
 })
 .then((response) => response.json())
 .then((data) => {
+    console.log(data)
     generateSurveyResult(data);
 })
 .catch((error) => {
