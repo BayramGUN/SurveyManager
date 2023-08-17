@@ -96,9 +96,9 @@ Source: [MediatR Source](https://github.com/jbogard/MediatR)
 
 Fluent Validation is a validation library for .NET, used for building strongly typed validation rules for business objects.
 
-![MediatR](./Documents/Images/FluentVald.png)
+![FluentValidation](./Documents/Images/FluentVald.png)
 
-Source: [MediatR Source](https://docs.fluentvalidation.net/en/latest/aspnet.html)
+Source: [FluentValidation Source](https://docs.fluentvalidation.net/en/latest/aspnet.html)
 
 ## Libraries
 
