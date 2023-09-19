@@ -12,9 +12,9 @@ async function getSurveyData(reqUrl) {
         
         const response = await fetch(reqUrl);
         const data = await response.json();
-        
+        console.log(data)
         if(data.isActive == false)
-        window.location.href = './unexpiry.html';
+            window.location.href = './unexpiry.html';
     
     generateSurvey(data) 
     return data;
@@ -74,7 +74,7 @@ function createSurveyHeader(data) {
 
 function createBooleanElement(question) {
     document.getElementById("surveyContainer").innerHTML += 
-        `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
+        `<label class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>`;
 	document.getElementById("surveyContainer").innerHTML += 
 		`<div class="mb-4">
 			<div class="flex flex-wrap -mx-2">
@@ -93,7 +93,7 @@ function createBooleanElement(question) {
 function createTextElement(question) {
     document.getElementById("surveyContainer").innerHTML += 
         `<div class="mb-4">
-            <label for="${question.type}" class="block text-gray-700 font-medium mb-2">${question.title}</label>
+            <label for="${question.type}" class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>
             <input type="text" id="${question.type}" name="${question.title}" class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" required>    
         </div>`;
 }
@@ -101,13 +101,13 @@ function createTextElement(question) {
 function createCommentElement(question) {
     document.getElementById("surveyContainer").innerHTML += 
         `<div class="mb-4">
-            <label for="${question.type}" class="block text-gray-700 font-medium mb-2">${question.title}</label>
+            <label for="${question.type}" class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>
             <textarea type="text" id="${question.type}" name="${question.title}" class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" required></textarea> 
         </div>`;
 }
 
 function createCheckboxElement(question) {
-    document.getElementById("surveyContainer").innerHTML += `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
+    document.getElementById("surveyContainer").innerHTML += `<label class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>`;
     question.choices.forEach(choice => {
         document.getElementById("surveyContainer").innerHTML += `<div class="mb-4">
             <div class="flex flex-wrap -mx-2">
@@ -122,7 +122,7 @@ function createCheckboxElement(question) {
 
 function createRatingElement(question) {
     document.getElementById("surveyContainer").innerHTML += 
-        `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
+        `<label class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>`;
     for(let i = 1; i <= question.rateMax; i++)
         document.getElementById("surveyContainer").innerHTML += 
             `<div class="mb-4">
@@ -138,7 +138,7 @@ function createRatingElement(question) {
 
 function createRadioGroupElement(question) {
     document.getElementById("surveyContainer").innerHTML += 
-        `<label class="block text-gray-700 font-medium mb-2">${question.title}</label>`;
+        `<label class="block text-gray-700 font-semibold mb-4 mt-4">${question.title}</label>`;
     question.choices.forEach(choice => {
         document.getElementById("surveyContainer").innerHTML += `<div class="mb-4">
             <div class="flex flex-wrap -mx-2">

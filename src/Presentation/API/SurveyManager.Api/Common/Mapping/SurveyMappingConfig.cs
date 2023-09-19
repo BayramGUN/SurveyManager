@@ -23,6 +23,7 @@ public class SurveyMappingConfig : IRegister
             .Map(dest => dest.HostId, src => src.Survey.HostId.Value.ToString())
             .Map(dest => dest.Description, src => src.Survey.Description)
             .Map(dest => dest.Title, src => src.Survey.Title)
+            .Map(dest => dest.IsActive, src => src.Survey.IsActive)
             .Map(dest => dest.Questions, src => src.Survey.Questions);
             
         config.NewConfig<HostSurveysResult, SurveyResponse>()
