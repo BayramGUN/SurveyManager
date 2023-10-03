@@ -4,7 +4,7 @@ using SurveyManager.Application.Common.Interfaces.Persistence;
 using SurveyManager.Domain.Common.Errors;
 using SurveyManager.Application.Surveys.Common;
 
-namespace SurveyManager.Application.Surveys.Queries;
+namespace SurveyManager.Application.Surveys.Queries.SurveyAnswersQuery;
 
 public class SurveyQueryHandler : 
     IRequestHandler<SurveyQuery, ErrorOr<SurveyResult>>
@@ -23,11 +23,11 @@ public class SurveyQueryHandler :
     {
         var survey = await _surveyRepository.GetSurveyAsync(query.Id);
         //await _surveyRepository.UpdateSurveyAsync();
-        if(survey is null)
-            return Errors.Survey.NotFound;
-        return new SurveyResult
-        (
-            Survey: survey
-        );
+        return (survey is null) ? 
+            Errors.Survey.NotFound:
+            new SurveyResult
+            (
+                Survey: survey
+            );
     }
 }

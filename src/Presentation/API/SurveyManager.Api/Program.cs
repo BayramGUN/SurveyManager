@@ -9,9 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddPresentation()
                     .AddApplication()
-                    .AddInfrastructure(builder.Configuration);
-   
-    
+                    .AddInfrastructure(builder.Configuration);   
 }
 
 var _mySpecs = "_mySpecs";

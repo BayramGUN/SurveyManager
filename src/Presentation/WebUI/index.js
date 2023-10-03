@@ -31,20 +31,21 @@ function surveyPage(data) {
         if(element.isActive == false) 
             var isActiveOrElse = "#f42d2d";
         else  isActiveOrElse = "#beff33";
-                  
+        
+        const expiry = new Date(element.expiryDate).toISOString().split('T').join(' ');
         document.getElementById("surveys").innerHTML += 
-        `<div class="col">
-            <div class="card">
-                <div class="card-header" style="background-color: ${isActiveOrElse};">
-                    <h3 class="text-white">${element.title}</h3>
+            `<div class="col">
+                <div class="card">
+                    <div class="card-header" style="background-color: ${isActiveOrElse};">
+                        <h3 class="text-white">${element.title}</h3>
+                    </div>
+                    <div class="card-body" id=${element.id.value}>
+                        <p>${element.description}</p>
+                        <p>Expiry Date: ${element.expiryDate.split('T').join(' ')} </p>
+                        <button type="button" class="btn btn-info" id=${element.id.value} onClick="getDetailsOfSurvey(this)">Get Details</button>
+                    </div>
                 </div>
-                <div class="card-body" id=${element.id.value}>
-                    <p>${element.description}</p>
-                    <p>Expiry Date: ${new Date(element.expiryDate).toLocaleDateString('tr-TR')}</p>
-                    <button type="button" class="btn btn-info" id=${element.id.value} onClick="getDetailsOfSurvey(this)">Get Details</button>
-                </div>
-            </div>
-        </div>`
+            </div>`
         
     });
         

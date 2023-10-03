@@ -9,6 +9,7 @@ using SurveyManager.Contracts.Surveys;
 using SurveyManager.Application.Surveys.Commands.UpdateSurvey;
 using Hangfire;
 using SurveyManager.Application.Common.Services;
+using SurveyManager.Application.SurveyAnswers.Queries.SurveyAnswersQuery;
 
 namespace SurveyManager.Api.Controllers;
 
@@ -78,7 +79,7 @@ public class SurveyController : ApiController
     [HttpGet("getAnswers")]
     public async Task<IActionResult> GetAllAnswers([FromQuery]Guid surveyId)
     {
-        var query = new SurveyAnswerQuery(surveyId: surveyId);
+        var query = new SurveyAnswersQuery(surveyId: surveyId);
 
         var getSurveyAnswerResult = await _mediator.Send(query);
         

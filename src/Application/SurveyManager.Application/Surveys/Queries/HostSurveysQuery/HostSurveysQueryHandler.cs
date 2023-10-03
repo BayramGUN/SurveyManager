@@ -21,13 +21,10 @@ public class HostSurveysQueryHandler :
         HostSurveysQuery query,
         CancellationToken cancellationToken)
     {
-        var hostsurveys = await _surveyRepository.GetSurveysByHostIdAsync(query.hostId);
-        //await _HostsurveysRepository.UpdateHostSurveysAsync();
-        if(hostsurveys is null)
-            return Errors.Survey.NotFound;
-        return new HostSurveysResult
-        (
-            HostSurveys: hostsurveys
-        );
+        var hostSurveys = await _surveyRepository.GetSurveysByHostIdAsync(query.hostId);
+        //await _HostSurveysRepository.UpdateHostSurveysAsync();
+        return (hostSurveys is null) ? 
+            Errors.Survey.NotFound : 
+            new HostSurveysResult(HostSurveys: hostSurveys);
     }
 }
