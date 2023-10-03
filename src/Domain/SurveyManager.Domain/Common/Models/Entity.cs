@@ -3,9 +3,9 @@ namespace SurveyManager.Domain.Common.Models;
 public abstract class Entity<TId> : IEquatable<Entity<TId>>, IHasDomainEvents
 where TId : notnull
 {
-    private readonly List<IDomainEvent> _doaminEvents = new();
+    private readonly List<IDomainEvent> _domainEvents = new();
     public TId Id { get; protected set; }
-    public IReadOnlyList<IDomainEvent> DomainEvents => _doaminEvents.AsReadOnly();
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
     public Entity(TId id)
     {
         Id = id;
@@ -21,13 +21,13 @@ where TId : notnull
         return Equals((object?)other);
     }
 
-    public static bool operator == (Entity<TId> left, Entity<TId> rigth)
+    public static bool operator == (Entity<TId> left, Entity<TId> right)
     {
-        return Equals(left, rigth);
+        return Equals(left, right);
     }
-    public static bool operator != (Entity<TId> left, Entity<TId> rigth)
+    public static bool operator != (Entity<TId> left, Entity<TId> right)
     {
-        return !Equals(left, rigth);
+        return !Equals(left, right);
     }
 
     public override int GetHashCode()
@@ -37,12 +37,12 @@ where TId : notnull
 
     public void AddDomainEvent(IDomainEvent domainEvent)
     {
-        _doaminEvents.Add(domainEvent);
+        _domainEvents.Add(domainEvent);
     }
 
     public void ClearDomainEvents()
     {
-        _doaminEvents.Clear();
+        _domainEvents.Clear();
     }
 # pragma warning disable CS8618
     protected Entity() {}

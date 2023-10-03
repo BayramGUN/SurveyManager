@@ -14,13 +14,13 @@ public abstract class ValueObject : IEquatable<ValueObject>
             .SequenceEqual(valueObject.GetEqualityComponents());
     }
 
-    public static bool operator == (ValueObject left, ValueObject rigth)
+    public static bool operator == (ValueObject left, ValueObject right)
     {
-        return Equals(left, rigth);
+        return Equals(left, right);
     }
-    public static bool operator != (ValueObject left, ValueObject rigth)
+    public static bool operator != (ValueObject left, ValueObject right)
     {
-        return !Equals(left, rigth);
+        return !Equals(left, right);
     }
 
     public override int GetHashCode()

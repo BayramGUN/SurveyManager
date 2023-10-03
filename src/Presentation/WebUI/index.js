@@ -40,6 +40,7 @@ function surveyPage(data) {
                 </div>
                 <div class="card-body" id=${element.id.value}>
                     <p>${element.description}</p>
+                    <p>Expiry Date: ${new Date(element.expiryDate).toLocaleDateString('tr-TR')}</p>
                     <button type="button" class="btn btn-info" id=${element.id.value} onClick="getDetailsOfSurvey(this)">Get Details</button>
                 </div>
             </div>

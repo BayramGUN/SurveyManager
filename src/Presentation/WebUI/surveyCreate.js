@@ -30,6 +30,8 @@ document.getElementById("ok").addEventListener("click", () => {
         expiryDate: ""
     };
     var expiryDate = document.getElementById("expiryDate").value;
+    const isValidDate = validateDateInput(expiryDate);
+    
     result.pages.forEach(element => {
         surveyRequestObject.elements = element.elements;
         surveyRequestObject.title = element.title;
@@ -51,11 +53,22 @@ document.getElementById("ok").addEventListener("click", () => {
                 confirmButtonText: 'OK'
             }).then(result => {
                 if(result)
-                    window.location.reload()
+                    window.location.reload();
             });
     })
     surveyRequest = JSON.stringify(surveyRequestObject);
-    createSurveyRequest(surveyRequest);
+    if(isValidDate)
+        createSurveyRequest(surveyRequest);
+    else
+        Swal.fire({
+            title: 'Problem! Invalid expiry date!',
+            text: `${expiryDate} is not smaller than UTC.Now + 30 min!`,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        }).then(result => {
+            if(result)
+                window.location.reload()
+        });
 });
 
 async function createSurveyRequest(surveyRequest) {
@@ -85,4 +98,14 @@ async function createSurveyRequest(surveyRequest) {
         });
     }
         
+}
+
+function validateDateInput(date) {
+    var userInput = new Date(date);
+    var today = new Date();
+    today.setMinutes(today.getMinutes() + 30);
+    if(userInput.getTime() <= today.getTime())
+        return false;
+    console.log(userInput);
+    return true;
 }
